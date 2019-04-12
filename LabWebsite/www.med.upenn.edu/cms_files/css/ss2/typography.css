@@ -1,0 +1,292 @@
+/* #Reset & Basics - Comment out if using twitter bootstrap!
+================================================== */
+html, body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, code, kbd, samp, small, sub, sup {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline; 
+}
+		
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, main {
+		display: block; 
+}
+
+body {
+		line-height: 1; 
+}
+
+blockquote, q {
+		quotes: none; 
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+		content: '';
+		content: none; 
+}
+		
+/* Typography
+================================================== 
+
+32px = 2 rem
+30px = 1.875 rem
+28px = 1.75 rem
+26px = 1.625 rem
+24px = 1.5 rem
+22px = 1.375 rem
+20px = 1.25 rem
+18px = 1.125 rem
+16px = 1 rem
+14px = 0.875 rem
+12px = 0.75 rem
+10px = 0.625 rem
+8px = 0.5 rem
+
+(target font size) / (base font size(16)) = REM value
+
+
+*/
+
+html, * {
+	font-size: 100% /* Browser default (1 rem = 16px) */
+}
+
+body, p, ul, li, ul ul, input[type="text"]{
+	font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+
+body {
+	font-size: 16px; font-size: 1rem;
+	line-height: 24px; line-height: 1.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 400;
+	}
+
+h2 strong, h3 strong, h4 strong, h5 strong, h6 strong, h2 em, h3 em, h4 em, h5 em, h6 em, h2 u, h3 u, h4 u, h5 u, h6 u  {
+	font-weight: inherit;
+	color: inherit;
+	font-style: inherit;
+	text-decoration: none;
+	}
+
+h1 {
+	font-size: 36px; font-size: 2.25rem;
+	line-height: 36px; line-height: 2.25rem;
+	margin-bottom: 14px; margin-bottom: 0.875rem;
+}
+
+h2 {
+	font-size: 28px; font-size: 1.75rem;
+	line-height: 28px; line-height: 1.75rem;
+	margin-bottom: 10px; margin-bottom: 0.625rem;
+}
+
+h3 {
+	font-size: 24px; font-size: 1.5rem;
+	line-height: 28px; line-height: 1.75rem;
+	margin-bottom: 8px; margin-bottom: 0.5rem;
+}
+
+h4 {
+	font-size: 21px; font-size: 1.3125rem;
+	line-height: 21px; line-height: 1.3125rem;
+	margin-bottom: 4px; margin-bottom: 0.25rem;
+}
+
+h5 {
+	font-size: 17px; font-size: 1.0625rem;
+	line-height: 21px; line-height: 1.3125rem;
+	margin-bottom: 4px; margin-bottom: 0.25rem;
+}
+
+h6 {
+	font-size: inherit; font-size: inherit;
+	line-height: 21px; line-height: 1.3125rem;
+	margin-bottom: 4px; margin-bottom: 0.25rem;
+}
+
+.subheader {
+	font-size: 19px; font-size: 1.1875rem;
+	margin-bottom: 4px; margin-bottom: 0.25rem;
+}
+
+p, ul, ol {
+	font-size: 13px; font-size: .8125rem;
+	line-height: 21px; line-height: 1.3125rem;
+}
+
+p {
+	margin-bottom: 20px; margin-bottom: 1.25rem;
+}
+
+p.lead {
+	font-size: 21px; font-size: 1.3125rem;
+	line-height: 27px; line-height: 1.6875rem;
+}
+
+blockquote {
+	font-size: 17px; font-size: 1.0625rem;
+	margin-bottom: 22px; line-height: 1.375rem;
+}
+
+blockquote p {
+	font-size: 17px; font-size: 1.0625rem;
+	line-height: 24px; line-height: 1.5rem;
+	margin-bottom: 16px; margin-bottom: 1rem;
+}
+
+blockquote cite {
+	font-size: 12px; font-size: 0.75rem;
+}
+
+cite {
+	font-style: italic;
+}
+
+pre {
+	margin-bottom: 24px; margin-bottom: 1.5rem;
+}
+
+
+code {
+	font-family: "Courier New", Courier, monospace;
+	line-height: 16px; line-height: 1rem;
+}
+
+kbd {
+	font-weight: bold;
+	font-size: 14px; font-size: 0.875rem;
+}
+
+samp {
+	font-size: 14px; font-size: 0.875rem;
+}
+
+small {
+	font-size: 13px; font-size: 0.8125rem;
+	line-height: 16px; line-height: 1rem;
+}
+
+sub {
+	font-size: 11px; font-size: 0.6875rem;
+	position: relative;
+	bottom: -0.25rem;
+}
+
+sup {
+	font-size: 11px; font-size: 0.6875rem;
+	position: relative;
+	top: -0.5rem;
+}
+
+ul {
+	list-style: disc;	
+}
+
+ul li ul {
+	list-style: circle;
+}
+
+ul li ul li ul {
+	list-style: square;
+}
+
+dd, dl, ol, li {
+	margin-left: 16px; margin-left: 1rem;
+	line-height: 24px; line-height: 1.5rem;
+}
+
+p, ul, ol, dl, dd, dt, blockquote {
+	line-height: 24px; line-height: 1.5rem;
+}
+
+ul, ol, ul ul, ol ol, ul ol, ol ul {
+	margin: 0 0 0 8px; margin: 0 0 0 0.5rem;
+}
+
+ul, ol, dl, hr, pre, hgroup {
+	margin-bottom: 24px; margin-bottom: 1.5rem;
+}
+
+ol ol li {
+  list-style-type: lower-alpha;
+}
+ol ol ol li {
+  list-style-type: lower-roman;
+}
+
+figcaption {
+	font-size: 14px; font-size: 0.875rem;
+}
+
+.backToTop {
+	margin: 20px 0 10px 0;
+}
+
+.status-bar {
+	top: 0;
+	width: 100%;
+	z-index: 2;
+	position: fixed;
+
+}
+
+/* ==========================================================================
+   Standard Breadcrumb Styling
+   ========================================================================== */
+   .breadcrumbs ul {
+   margin: 0;
+   }
+
+.breadcrumbs ul li {
+   list-style-type: none;
+   display: inline;
+   }
+
+.breadcrumbs li+li:before {
+   font-family: 'FontAwesome';
+   content: '\f105';
+   margin: 0 5px;
+   } 
+
+
+/* Universal Styles
+================================================== */
+
+
+a[href$=".pdf"]:after {
+    font-family: 'FontAwesome';
+    font-weight: 400;
+    content: '\f1c1'; /*PDF*/
+    padding: 0 0 0 3px;
+    }
+
+a[href$=".xls"]:after, a[href$=".xlsx"]:after {
+    font-family: 'FontAwesome';
+    font-weight: 400;
+    content: '\f1c3'; /*SPREADSHEET*/
+    padding: 0 0 0 3px;
+    }
+
+a[href$=".doc"]:after, a[href$=".docx"]:after {
+    font-family: 'FontAwesome';
+    font-weight: 400;
+    content: '\f1c2'; /*WORD DOC*/
+    padding: 0 0 0 3px;
+    }
+
+a[href$=".ppt"]:after, a[href$=".pptx"]:after {
+    font-family: 'FontAwesome';
+    font-weight: 400;
+    content: '\f1c4'; /*POWERPOINT*/
+    padding: 0 0 0 3px;
+    }
+
+a.no-icon:after {
+    display: none;
+    }
+
