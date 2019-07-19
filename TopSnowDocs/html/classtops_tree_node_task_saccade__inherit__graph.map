@@ -1,9 +1,0 @@
-<map id="topsTreeNodeTaskSaccade" name="topsTreeNodeTaskSaccade">
-<area shape="rect" id="node1" title=" " alt="" coords="5,470,189,498"/>
-<area shape="rect" id="node2" href="$classtops_tree_node_task.html" title=" " alt="" coords="31,393,163,421"/>
-<area shape="rect" id="node3" href="$classtops_tree_node.html" title="A tree&#45;like way to organize an experiment." alt="" coords="45,315,149,343"/>
-<area shape="rect" id="node4" href="$classtops_runnable_composite.html" title="Superclass for objects that run just by running other objects." alt="" coords="14,238,180,266"/>
-<area shape="rect" id="node5" href="$classtops_runnable.html" title="Superclass for flow&#45;control classes." alt="" coords="46,161,148,189"/>
-<area shape="rect" id="node6" href="$classtops_foundation.html" title="Superclass for all of the fundamental Tower of Psych classes." alt="" coords="41,83,153,111"/>
-<area shape="rect" id="node7" href="$classhandle.html" title=" " alt="" coords="67,6,128,34"/>
-</map>
