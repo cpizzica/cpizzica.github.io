@@ -14,6 +14,6 @@ var searchData=
   ['updatepolygons',['updatePolygons',['../classdots_drawable_targets.html#a53c71b73ed2ae057e844022e6385f600',1,'dotsDrawableTargets']]],
   ['updatesamples',['updateSamples',['../classtops_classification.html#a1cd801594c4b45eb99fe2f4456f5eb68',1,'topsClassification']]],
   ['updateserverobject',['updateServerObject',['../classdots_client_ensemble.html#a03f58b60295f2f3e90b6ddba3103a31a',1,'dotsClientEnsemble']]],
-  ['updatestatus',['updateStatus',['../classtops_tree_node_task.html#a6e8e5ba43fcfa8cc18d1680bc2b8443d',1,'topsTreeNodeTask']]],
+  ['updatestatus',['updateStatus',['../classtops_tree_node_task.html#a368fb410774c4df16e3aceae6c7848ac',1,'topsTreeNodeTask']]],
   ['usepanels',['usePanels',['../classtops_figure.html#ad2257dbc42f1d42f81295cda8303fb70',1,'topsFigure']]]
 ];

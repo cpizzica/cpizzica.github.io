@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>NewTopDotFullScan: topsEnsemble Class Reference</title>
+<title>MasterScan: topsEnsemble Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,8 +22,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">NewTopDotFullScan
-   &#160;<span id="projectnumber">automatic</span>
+   <div id="projectname">MasterScan
+   &#160;<span id="projectnumber">Lab_Matlab_control Master Branch</span>
    </div>
   </td>
  </tr>
@@ -100,6 +100,10 @@ Protected Properties</h2></td></tr>
 <tr class="memitem:adda99f1f614948e6748666f4ceb38a6b"><td class="memItemLeft" align="right" valign="top">Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtops_ensemble.html#adda99f1f614948e6748666f4ceb38a6b">objects</a> = {}</td></tr>
 <tr class="memdesc:adda99f1f614948e6748666f4ceb38a6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">array of objects in the ensemble  <a href="#adda99f1f614948e6748666f4ceb38a6b">More...</a><br /></td></tr>
 <tr class="separator:adda99f1f614948e6748666f4ceb38a6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98d1d7a97647a6249fbba00c1461db5c"><td class="memItemLeft" align="right" valign="top"><a id="a98d1d7a97647a6249fbba00c1461db5c"></a>
+Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtops_ensemble.html#a98d1d7a97647a6249fbba00c1461db5c">objectNames</a> = {}</td></tr>
+<tr class="memdesc:a98d1d7a97647a6249fbba00c1461db5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">optional array of object names, for convenience <br /></td></tr>
+<tr class="separator:a98d1d7a97647a6249fbba00c1461db5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Methods</h2></td></tr>
@@ -133,28 +137,6 @@ Methods</h2></td></tr>
 <tr class="memitem:a5981807ff8bf34556f68d0989d57b355"><td class="memItemLeft" align="right" valign="top">result&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtops_ensemble.html#a5981807ff8bf34556f68d0989d57b355">callObjectMethod</a> (self, method, args, index, isCell)</td></tr>
 <tr class="memdesc:a5981807ff8bf34556f68d0989d57b355"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call a method for one or more objects.  <a href="#a5981807ff8bf34556f68d0989d57b355">More...</a><br /></td></tr>
 <tr class="separator:a5981807ff8bf34556f68d0989d57b355"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">name string name given to this automated method call</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p>Prepare to repeatedly call a method, for one or more objects.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">method</td><td>function_handle of an ensemble object method </td></tr>
-    <tr><td class="paramname">args</td><td>optional cell array of arguments to pass to <em>method</em> </td></tr>
-    <tr><td class="paramname">index</td><td>optional ensemble object index or indexes </td></tr>
-    <tr><td class="paramname">isCell</td><td>optional whether to pass objects in one cell array </td></tr>
-    <tr><td class="paramname">isActive</td><td>whether the named method call should be active</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Defines an automated method call, with the given <em>name</em>. Any existing call with <em>name</em> will be replaced. The automated call can be treated like other <a class="el" href="classtops_call_list.html" title="A list of functions to call sequentially, as a batch.">topsCallList</a> calls: it may be invoked by the user with <a class="el" href="classtops_call_list.html#ab1eb32032f81fcb1c88dd795a976580d" title="Invoke a call now, whether or not it&#39;s active.">callByName()</a>, or automatically during <a class="el" href="classtops_call_list.html#ad39f1b8814f26d4d247d7da89dcd1173" title="Invoke active calls in a batch.">runBriefly()</a>.</p>
-<p>By default, automated method calls will be invoked during <a class="el" href="classtops_call_list.html#ad39f1b8814f26d4d247d7da89dcd1173" title="Invoke active calls in a batch.">runBriefly()</a>. If <em>isActive</em> is provided and false, <a class="el" href="classtops_call_list.html#ad39f1b8814f26d4d247d7da89dcd1173" title="Invoke active calls in a batch.">runBriefly()</a> will ignore the named call. Calls may be activated or deactivated later with <a class="el" href="classtops_call_list.html#a30972320684a68673d9ff8595acbc999" title="Toggle whether a call is active.">setActiveByName()</a> or <a class="el" href="classtops_call_list.html#ab1eb32032f81fcb1c88dd795a976580d" title="Invoke a call now, whether or not it&#39;s active.">callByName()</a> with the isActive flag.</p>
-<p>Prepares to call <em>method</em>, which ensemble objects have in common. If <em>args</em> is provided, the elements of <em>args</em> will be passed as arguments to <em>method</em>.</p>
-<p>By default, calls <em>method</em> once per object in the ensemble. If <em>index</em> is provided, it may specify particular ensemble objects. For example, <em>index</em> may specify a subset of objects, or the order in which objects should have <em>method</em> invoked.</p>
-<p>By default, iterates through objects, invoking <em>method</em> once per object. If isCell is true, invokes <em>method</em> only once, passing a cell array of objects as the first argument. This assumes that <em>method</em> is a static class method that operates on multiple objects at once. <em>method</em> could also be a regular function.</p>
-<p>Returns the index into the calls struct array where the automated method call was appended or inserted. </p>
-</div></td></tr>
-<tr class="memitem:a2685f3a0ec354f30a52c54d2c9d89e6f"><td class="memItemLeft" align="right" valign="top"><a id="a2685f3a0ec354f30a52c54d2c9d89e6f"></a>
-index&#160;</td><td class="memItemRight" valign="bottom"><b>automateObjectMethod</b> (self, <a class="el" href="classtops_foundation.html#a73d044705182dce0379a1c211dca6ec6">name</a>, method, args, index, isCell, isActive)</td></tr>
-<tr class="separator:a2685f3a0ec354f30a52c54d2c9d89e6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classtops_call_list"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classtops_call_list')"><img src="closed.png" alt="-"/>&#160;Methods inherited from <a class="el" href="classtops_call_list.html">topsCallList</a></td></tr>
 <tr class="memitem:a059e87f5ec36f8e477e7e7fcbb3cf535 inherit pub_methods_classtops_call_list"><td class="memItemLeft" align="right" valign="top">self&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtops_call_list.html#a059e87f5ec36f8e477e7e7fcbb3cf535">topsCallList</a> (varargin)</td></tr>
 <tr class="memdesc:a059e87f5ec36f8e477e7e7fcbb3cf535 inherit pub_methods_classtops_call_list"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constuct with name optional.  <a href="classtops_call_list.html#a059e87f5ec36f8e477e7e7fcbb3cf535">More...</a><br /></td></tr>
@@ -218,6 +200,33 @@ g&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classto
 <tr class="memitem:acc772c903527cca8657740197f30c34b inherit pub_methods_classtops_foundation"><td class="memItemLeft" align="right" valign="top">p&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtops_foundation.html#acc772c903527cca8657740197f30c34b">guiPanel</a> (self, varargin)</td></tr>
 <tr class="memdesc:acc772c903527cca8657740197f30c34b inherit pub_methods_classtops_foundation"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a topsDetailPanel with details about this object.  <a href="classtops_foundation.html#acc772c903527cca8657740197f30c34b">More...</a><br /></td></tr>
 <tr class="separator:acc772c903527cca8657740197f30c34b inherit pub_methods_classtops_foundation"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+name string name given to this automated method call</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrp36cf99fe469b13043ee582a3a6bd2320"></a>Prepare to repeatedly call a method, for one or more objects.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">method</td><td>function_handle of an ensemble object method </td></tr>
+    <tr><td class="paramname">args</td><td>optional cell array of arguments to pass to <em>method</em> </td></tr>
+    <tr><td class="paramname">index</td><td>optional ensemble object index or indexes </td></tr>
+    <tr><td class="paramname">isCell</td><td>optional whether to pass objects in one cell array </td></tr>
+    <tr><td class="paramname">isActive</td><td>whether the named method call should be active</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Defines an automated method call, with the given <em>name</em>. Any existing call with <em>name</em> will be replaced. The automated call can be treated like other <a class="el" href="classtops_call_list.html" title="A list of functions to call sequentially, as a batch.">topsCallList</a> calls: it may be invoked by the user with <a class="el" href="classtops_call_list.html#ab1eb32032f81fcb1c88dd795a976580d" title="Invoke a call now, whether or not it&#39;s active.">callByName()</a>, or automatically during <a class="el" href="classtops_call_list.html#ad39f1b8814f26d4d247d7da89dcd1173" title="Invoke active calls in a batch.">runBriefly()</a>.</p>
+<p>By default, automated method calls will be invoked during <a class="el" href="classtops_call_list.html#ad39f1b8814f26d4d247d7da89dcd1173" title="Invoke active calls in a batch.">runBriefly()</a>. If <em>isActive</em> is provided and false, <a class="el" href="classtops_call_list.html#ad39f1b8814f26d4d247d7da89dcd1173" title="Invoke active calls in a batch.">runBriefly()</a> will ignore the named call. Calls may be activated or deactivated later with <a class="el" href="classtops_call_list.html#a30972320684a68673d9ff8595acbc999" title="Toggle whether a call is active.">setActiveByName()</a> or <a class="el" href="classtops_call_list.html#ab1eb32032f81fcb1c88dd795a976580d" title="Invoke a call now, whether or not it&#39;s active.">callByName()</a> with the isActive flag.</p>
+<p>Prepares to call <em>method</em>, which ensemble objects have in common. If <em>args</em> is provided, the elements of <em>args</em> will be passed as arguments to <em>method</em>.</p>
+<p>By default, calls <em>method</em> once per object in the ensemble. If <em>index</em> is provided, it may specify particular ensemble objects. For example, <em>index</em> may specify a subset of objects, or the order in which objects should have <em>method</em> invoked.</p>
+<p>By default, iterates through objects, invoking <em>method</em> once per object. If isCell is true, invokes <em>method</em> only once, passing a cell array of objects as the first argument. This assumes that <em>method</em> is a static class method that operates on multiple objects at once. <em>method</em> could also be a regular function.</p>
+<p>Returns the index into the calls struct array where the automated method call was appended or inserted. </p>
+</td></tr>
+<tr class="memitem:a2685f3a0ec354f30a52c54d2c9d89e6f"><td class="memItemLeft" align="right" valign="top"><a id="a2685f3a0ec354f30a52c54d2c9d89e6f"></a>
+index&#160;</td><td class="memItemRight" valign="bottom"><b>automateObjectMethod</b> (self, <a class="el" href="classtops_foundation.html#a73d044705182dce0379a1c211dca6ec6">name</a>, method, args, index, isCell, isActive)</td></tr>
+<tr class="separator:a2685f3a0ec354f30a52c54d2c9d89e6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ecf29a6a2ac2483795a4c8a484edb63"><td class="memItemLeft" align="right" valign="top">static ensemble&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtops_ensemble.html#a7ecf29a6a2ac2483795a4c8a484edb63">makeEnsemble</a> (<a class="el" href="classtops_foundation.html#a73d044705182dce0379a1c211dca6ec6">name</a>, <a class="el" href="classtops_ensemble.html#adda99f1f614948e6748666f4ceb38a6b">objects</a>)</td></tr>
+<tr class="memdesc:a7ecf29a6a2ac2483795a4c8a484edb63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenient utility for combining a bunch of objects into an ensemble.  <a href="#a7ecf29a6a2ac2483795a4c8a484edb63">More...</a><br /></td></tr>
+<tr class="separator:a7ecf29a6a2ac2483795a4c8a484edb63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -729,6 +738,45 @@ Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 <p>Calls the given <em>method</em>, which ensemble objects have in common. If <em>args</em> is provided, passes the elements of <em>args</em> as arguments to <em>method</em>. Returns a cell array with one element per object, containing the first <em>method</em> result from each object. If there is only one object, returns the result without enclosing it in a cell array.</p>
 <p>By default, calls <em>method</em> once per object in the ensemble. If <em>index</em> is provided, it may specify particular ensemble objects. For example, <em>index</em> may specify a subset of objects, or the order in which objects should have <em>method</em> invoked.</p>
 <p>By default, iterates through objects, invoking <em>method</em> once per object. If isCell is true, invokes <em>method</em> only once, passing a cell array of objects as the first argument. This assumes that <em>method</em> is a static class method that operates on multiple objects at once. <em>method</em> could also be a regular function. </p>
+
+</div>
+</div>
+<a id="a7ecf29a6a2ac2483795a4c8a484edb63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ecf29a6a2ac2483795a4c8a484edb63">&#9670;&nbsp;</a></span>makeEnsemble()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static ensemble makeEnsemble </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtops_foundation.html#a73d044705182dce0379a1c211dca6ec6">name</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classtops_ensemble.html#adda99f1f614948e6748666f4ceb38a6b">objects</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convenient utility for combining a bunch of objects into an ensemble. </p>
+<p>Aguments: name ... optional &lt;string&gt; name of the ensemble/composite objects ... cell array of objects </p>
 
 </div>
 </div>

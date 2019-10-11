@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>NewTopDotFullScan: dotsPlayableTone Class Reference</title>
+<title>MasterScan: dotsPlayableTone Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,8 +22,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">NewTopDotFullScan
-   &#160;<span id="projectnumber">automatic</span>
+   <div id="projectname">MasterScan
+   &#160;<span id="projectnumber">Lab_Matlab_control Master Branch</span>
    </div>
   </td>
  </tr>
@@ -92,6 +92,14 @@ Properties and Events</h2></td></tr>
 Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_playable_tone.html#a279c072059fcd4e99701e6b1475a5d49">frequency</a></td></tr>
 <tr class="memdesc:a279c072059fcd4e99701e6b1475a5d49"><td class="mdescLeft">&#160;</td><td class="mdescRight">frequency of the sinusoid (Hz) <br /></td></tr>
 <tr class="separator:a279c072059fcd4e99701e6b1475a5d49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0dc479a48b73c43a234dedd2e06bec7"><td class="memItemLeft" align="right" valign="top"><a id="ac0dc479a48b73c43a234dedd2e06bec7"></a>
+Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_playable_tone.html#ac0dc479a48b73c43a234dedd2e06bec7">usePTB</a> = false</td></tr>
+<tr class="memdesc:ac0dc479a48b73c43a234dedd2e06bec7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test to use PTB PsychPortAudio. <br /></td></tr>
+<tr class="separator:ac0dc479a48b73c43a234dedd2e06bec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abccef2db2effd9f46833f96c6f788841"><td class="memItemLeft" align="right" valign="top"><a id="abccef2db2effd9f46833f96c6f788841"></a>
+Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_playable_tone.html#abccef2db2effd9f46833f96c6f788841">waitForStart</a> = 1</td></tr>
+<tr class="memdesc:abccef2db2effd9f46833f96c6f788841"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag to block until sound has actually started playing (if usePTB) <br /></td></tr>
+<tr class="separator:abccef2db2effd9f46833f96c6f788841"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_classdots_playable"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classdots_playable')"><img src="closed.png" alt="-"/>&#160;Properties and Events inherited from <a class="el" href="classdots_playable.html">dotsPlayable</a></td></tr>
 <tr class="memitem:a7c46c4fe5886ebecee056a8fed6ec05b inherit pub_attribs_classdots_playable"><td class="memItemLeft" align="right" valign="top"><a id="a7c46c4fe5886ebecee056a8fed6ec05b"></a>
 Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_playable.html#a7c46c4fe5886ebecee056a8fed6ec05b">isAudible</a> = true</td></tr>
@@ -132,7 +140,7 @@ Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 Protected Properties</h2></td></tr>
 <tr class="memitem:ac4b71727d8fa4e5cf9974d91918c4415"><td class="memItemLeft" align="right" valign="top"><a id="ac4b71727d8fa4e5cf9974d91918c4415"></a>
 Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_playable_tone.html#ac4b71727d8fa4e5cf9974d91918c4415">player</a></td></tr>
-<tr class="memdesc:ac4b71727d8fa4e5cf9974d91918c4415"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matlab audioplayer object. <br /></td></tr>
+<tr class="memdesc:ac4b71727d8fa4e5cf9974d91918c4415"><td class="mdescLeft">&#160;</td><td class="mdescRight">The playable: either a Matlab audioplayer object or PsychPortAudio device. <br /></td></tr>
 <tr class="separator:ac4b71727d8fa4e5cf9974d91918c4415"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classdots_playable"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classdots_playable')"><img src="closed.png" alt="-"/>&#160;Protected Properties inherited from <a class="el" href="classdots_playable.html">dotsPlayable</a></td></tr>
 <tr class="memitem:aa8e5aa4848241e973387de4cfafa2542 inherit pro_attribs_classdots_playable"><td class="memItemLeft" align="right" valign="top"><a id="aa8e5aa4848241e973387de4cfafa2542"></a>
@@ -148,12 +156,16 @@ self&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="separator:a57ed8f6da1cbd196852541e5195eddec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3eaa550b6f5dcf07a811ca4a34f9b72b"><td class="memItemLeft" align="right" valign="top"><a id="a3eaa550b6f5dcf07a811ca4a34f9b72b"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_playable_tone.html#a3eaa550b6f5dcf07a811ca4a34f9b72b">prepareToPlay</a> (self)</td></tr>
-<tr class="memdesc:a3eaa550b6f5dcf07a811ca4a34f9b72b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute a sinusoidal wavform to play. <br /></td></tr>
+<tr class="memdesc:a3eaa550b6f5dcf07a811ca4a34f9b72b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute a sinusoidal waveform to play. <br /></td></tr>
 <tr class="separator:a3eaa550b6f5dcf07a811ca4a34f9b72b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48a33ee6523b791c272e43a2293b76c4"><td class="memItemLeft" align="right" valign="top"><a id="a48a33ee6523b791c272e43a2293b76c4"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_playable_tone.html#a48a33ee6523b791c272e43a2293b76c4">play</a> (self)</td></tr>
 <tr class="memdesc:a48a33ee6523b791c272e43a2293b76c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Play the tone. <br /></td></tr>
 <tr class="separator:a48a33ee6523b791c272e43a2293b76c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b5ac065a7cbf8ae7d9661ab860bf994"><td class="memItemLeft" align="right" valign="top"><a id="a8b5ac065a7cbf8ae7d9661ab860bf994"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_playable_tone.html#a8b5ac065a7cbf8ae7d9661ab860bf994">stopPlaying</a> (self, waitForEndOfPlayback)</td></tr>
+<tr class="memdesc:a8b5ac065a7cbf8ae7d9661ab860bf994"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop the tone. <br /></td></tr>
+<tr class="separator:a8b5ac065a7cbf8ae7d9661ab860bf994"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classdots_playable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classdots_playable')"><img src="closed.png" alt="-"/>&#160;Methods inherited from <a class="el" href="classdots_playable.html">dotsPlayable</a></td></tr>
 <tr class="memitem:a118615c204ac01747da5ce4a2e5ac26d inherit pub_methods_classdots_playable"><td class="memItemLeft" align="right" valign="top"><a id="a118615c204ac01747da5ce4a2e5ac26d"></a>
 self&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_playable.html#a118615c204ac01747da5ce4a2e5ac26d">dotsPlayable</a> ()</td></tr>
@@ -171,6 +183,10 @@ self&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_playable.html#a48a33ee6523b791c272e43a2293b76c4">play</a> (self)</td></tr>
 <tr class="memdesc:a48a33ee6523b791c272e43a2293b76c4 inherit pub_methods_classdots_playable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subclass must redefine <a class="el" href="classdots_playable.html#a48a33ee6523b791c272e43a2293b76c4" title="Subclass must redefine play() to play a sound.">play()</a> to play a sound. <br /></td></tr>
 <tr class="separator:a48a33ee6523b791c272e43a2293b76c4 inherit pub_methods_classdots_playable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b5ac065a7cbf8ae7d9661ab860bf994 inherit pub_methods_classdots_playable"><td class="memItemLeft" align="right" valign="top"><a id="a8b5ac065a7cbf8ae7d9661ab860bf994"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_playable.html#a8b5ac065a7cbf8ae7d9661ab860bf994">stopPlaying</a> (self, waitForEndOfPlayback)</td></tr>
+<tr class="memdesc:a8b5ac065a7cbf8ae7d9661ab860bf994 inherit pub_methods_classdots_playable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subclass must redefine <a class="el" href="classdots_playable.html#a8b5ac065a7cbf8ae7d9661ab860bf994" title="Subclass must redefine stopPlaying() to stop playing a sound.">stopPlaying()</a> to stop playing a sound. <br /></td></tr>
+<tr class="separator:a8b5ac065a7cbf8ae7d9661ab860bf994 inherit pub_methods_classdots_playable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada5e4b1c14b511ffa693581b021a97a4 inherit pub_methods_classdots_playable"><td class="memItemLeft" align="right" valign="top"><a id="ada5e4b1c14b511ffa693581b021a97a4"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_playable.html#ada5e4b1c14b511ffa693581b021a97a4">unMute</a> (self)</td></tr>
 <tr class="memdesc:ada5e4b1c14b511ffa693581b021a97a4 inherit pub_methods_classdots_playable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shorthand to set isAudible=true. <br /></td></tr>
@@ -182,9 +198,9 @@ self&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Methods</h2></td></tr>
-<tr class="memitem:a89d09fff753658e4cacca6e3b656d8cd"><td class="memItemLeft" align="right" valign="top">static playableTone&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_playable_tone.html#a89d09fff753658e4cacca6e3b656d8cd">makePlayableTone</a> (args)</td></tr>
-<tr class="memdesc:a89d09fff753658e4cacca6e3b656d8cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenient utility for making a tone object.  <a href="#a89d09fff753658e4cacca6e3b656d8cd">More...</a><br /></td></tr>
-<tr class="separator:a89d09fff753658e4cacca6e3b656d8cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa1421653deb9404f016dff376e53bee"><td class="memItemLeft" align="right" valign="top">static playableTone&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_playable_tone.html#aaa1421653deb9404f016dff376e53bee">makeTone</a> (args)</td></tr>
+<tr class="memdesc:aaa1421653deb9404f016dff376e53bee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenient utility for making a tone object.  <a href="#aaa1421653deb9404f016dff376e53bee">More...</a><br /></td></tr>
+<tr class="separator:aaa1421653deb9404f016dff376e53bee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_methods_classdots_playable"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classdots_playable')"><img src="closed.png" alt="-"/>&#160;Static Methods inherited from <a class="el" href="classdots_playable.html">dotsPlayable</a></td></tr>
 <tr class="memitem:ac594a8d47ee356fc08f68b9baa9a1747 inherit pub_static_methods_classdots_playable"><td class="memItemLeft" align="right" valign="top"><a id="ac594a8d47ee356fc08f68b9baa9a1747"></a>
 static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_playable.html#ac594a8d47ee356fc08f68b9baa9a1747">playSound</a> (playableList, indices)</td></tr>
@@ -192,8 +208,8 @@ static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <tr class="separator:ac594a8d47ee356fc08f68b9baa9a1747 inherit pub_static_methods_classdots_playable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Methods</h2>
-<a id="a89d09fff753658e4cacca6e3b656d8cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89d09fff753658e4cacca6e3b656d8cd">&#9670;&nbsp;</a></span>makePlayableTone()</h2>
+<a id="aaa1421653deb9404f016dff376e53bee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa1421653deb9404f016dff376e53bee">&#9670;&nbsp;</a></span>makeTone()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -202,7 +218,7 @@ static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static playableTone makePlayableTone </td>
+          <td class="memname">static playableTone makeTone </td>
           <td>(</td>
           <td class="paramtype">args&#160;</td>
           <td class="paramname"></td><td>)</td>

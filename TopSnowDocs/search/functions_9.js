@@ -4,6 +4,7 @@ var searchData=
   ['loaddatafile',['loadDataFile',['../classdots_readable.html#a4b0eb5ad5384bde8b3d06e588f978f99',1,'dotsReadable']]],
   ['loadrawdata',['loadRawData',['../classdots_readable_spike2.html#a70459d7af2c75963b4e181196955e504',1,'dotsReadableSpike2::loadRawData()'],['../classtops_tree_node_top_node.html#a89766b83d57b013665a22860055672d7',1,'topsTreeNodeTopNode::loadRawData()']]],
   ['loadshaderprogram',['loadShaderProgram',['../classdots_drawable_explosion.html#aa09b110600ec8130bd848f5321797bf2',1,'dotsDrawableExplosion']]],
+  ['loadtrials',['loadTrials',['../classtops_tree_node_task.html#aa0ad93aa96c89be27d7a04538e314bd6',1,'topsTreeNodeTask']]],
   ['logaction',['logAction',['../classtops_runnable.html#adb11f3757673c2cd1697dd59927d7522',1,'topsRunnable']]],
   ['logdata',['logData',['../classdots_readable.html#a4f8ed6bbe6f930d4c5038d8ca024ca91',1,'dotsReadable']]],
   ['logdataingroup',['logDataInGroup',['../classtops_data_log.html#a148e17810877b9609fde06ce045df331',1,'topsDataLog']]],

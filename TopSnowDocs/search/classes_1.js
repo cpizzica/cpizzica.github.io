@@ -10,7 +10,8 @@ var searchData=
   ['dotsdrawable',['dotsDrawable',['../classdots_drawable.html',1,'']]],
   ['dotsdrawableanimator',['dotsDrawableAnimator',['../classdots_drawable_animator.html',1,'']]],
   ['dotsdrawablearcs',['dotsDrawableArcs',['../classdots_drawable_arcs.html',1,'']]],
-  ['dotsdrawabledotkinetogram',['dotsDrawableDotKinetogram',['../classdots_drawable_dot_kinetogram.html',1,'']]],
+  ['dotsdrawabledotkinetogram',['dotsDrawableDotKinetogram',['../classdots_drawable_dot_kinetogram.html',1,'dotsDrawableDotKinetogram'],['../classdots_drawable_dot_kinetogram.html',1,'dotsDrawableDotKinetogram']]],
+  ['dotsdrawabledotkinetogramdebug',['dotsDrawableDotKinetogramDebug',['../classdots_drawable_dot_kinetogram_debug.html',1,'']]],
   ['dotsdrawableexplosion',['dotsDrawableExplosion',['../classdots_drawable_explosion.html',1,'']]],
   ['dotsdrawableimages',['dotsDrawableImages',['../classdots_drawable_images.html',1,'']]],
   ['dotsdrawablelines',['dotsDrawableLines',['../classdots_drawable_lines.html',1,'']]],
@@ -22,6 +23,7 @@ var searchData=
   ['dotsensembleutilities',['dotsEnsembleUtilities',['../classdots_ensemble_utilities.html',1,'']]],
   ['dotsmglflushgauge',['dotsMglFlushGauge',['../classdots_mgl_flush_gauge.html',1,'']]],
   ['dotsplayable',['dotsPlayable',['../classdots_playable.html',1,'']]],
+  ['dotsplayablefasttone',['dotsPlayableFastTone',['../classdots_playable_fast_tone.html',1,'']]],
   ['dotsplayablefile',['dotsPlayableFile',['../classdots_playable_file.html',1,'']]],
   ['dotsplayablenote',['dotsPlayableNote',['../classdots_playable_note.html',1,'']]],
   ['dotsplayabletone',['dotsPlayableTone',['../classdots_playable_tone.html',1,'']]],
@@ -47,5 +49,9 @@ var searchData=
   ['dotswritable',['dotsWritable',['../classdots_writable.html',1,'']]],
   ['dotswritabledout',['dotsWritableDOut',['../classdots_writable_d_out.html',1,'']]],
   ['dotswritabledout1208fs',['dotsWritableDOut1208FS',['../classdots_writable_d_out1208_f_s.html',1,'']]],
-  ['dotswritabledoutlabjack',['dotsWritableDOutLabJack',['../classdots_writable_d_out_lab_jack.html',1,'']]]
+  ['dotswritabledoutarduino',['dotsWritableDOutArduino',['../classdots_writable_d_out_arduino.html',1,'']]],
+  ['dotswritabledoutarduinoleds',['dotsWritableDOutArduinoLEDs',['../classdots_writable_d_out_arduino_l_e_ds.html',1,'']]],
+  ['dotswritabledoutlabjack',['dotsWritableDOutLabJack',['../classdots_writable_d_out_lab_jack.html',1,'']]],
+  ['dotswritableleds',['dotsWritableLEDs',['../classdots_writable_l_e_ds.html',1,'']]],
+  ['dotswritableledsarduino',['dotsWritableLEDsArduino',['../classdots_writable_l_e_ds_arduino.html',1,'']]]
 ];

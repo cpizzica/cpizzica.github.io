@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>NewTopDotFullScan: dotsTheScreen Class Reference</title>
+<title>MasterScan: dotsTheScreen Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,8 +22,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">NewTopDotFullScan
-   &#160;<span id="projectnumber">automatic</span>
+   <div id="projectname">MasterScan
+   &#160;<span id="projectnumber">Lab_Matlab_control Master Branch</span>
    </div>
   </td>
  </tr>
@@ -179,10 +179,14 @@ Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_the_screen.html#af8f3eb8e11130fb81c0a972b8dd5cb32">offsetTime</a> =0</td></tr>
 <tr class="memdesc:af8f3eb8e11130fb81c0a972b8dd5cb32"><td class="mdescLeft">&#160;</td><td class="mdescRight">for clock synchronization <br /></td></tr>
 <tr class="separator:af8f3eb8e11130fb81c0a972b8dd5cb32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0dd11fc68674edd058c281c4e499eb41"><td class="memItemLeft" align="right" valign="top"><a id="a0dd11fc68674edd058c281c4e499eb41"></a>
-Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_the_screen.html#a0dd11fc68674edd058c281c4e499eb41">isRemote</a> = false</td></tr>
-<tr class="memdesc:a0dd11fc68674edd058c281c4e499eb41"><td class="mdescLeft">&#160;</td><td class="mdescRight">To check for remote mode. <br /></td></tr>
-<tr class="separator:a0dd11fc68674edd058c281c4e499eb41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76a588851458e9607dfb07727f6a96f1"><td class="memItemLeft" align="right" valign="top"><a id="a76a588851458e9607dfb07727f6a96f1"></a>
+Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_the_screen.html#a76a588851458e9607dfb07727f6a96f1">isRemoteFlag</a> = false</td></tr>
+<tr class="memdesc:a76a588851458e9607dfb07727f6a96f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">To check for remote mode. <br /></td></tr>
+<tr class="separator:a76a588851458e9607dfb07727f6a96f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91fde0b46b612e72829535c9255c839d"><td class="memItemLeft" align="right" valign="top"><a id="a91fde0b46b612e72829535c9255c839d"></a>
+Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_the_screen.html#a91fde0b46b612e72829535c9255c839d">isOpenFlag</a> = false</td></tr>
+<tr class="memdesc:a91fde0b46b612e72829535c9255c839d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Screen is open. <br /></td></tr>
+<tr class="separator:a91fde0b46b612e72829535c9255c839d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Methods</h2></td></tr>
@@ -237,9 +241,13 @@ Static Methods</h2></td></tr>
 static <a class="el" href="classdots_all_singleton_objects.html#aa769c4e57badebc6937a3243f73a1653">obj</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_the_screen.html#a6eefc57355c77cf6b907146d44a65222">theObject</a> (varargin)</td></tr>
 <tr class="memdesc:a6eefc57355c77cf6b907146d44a65222"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the current instance of the object. <br /></td></tr>
 <tr class="separator:a6eefc57355c77cf6b907146d44a65222"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf4740d4e98aa3c665a3c42061bb9a10"><td class="memItemLeft" align="right" valign="top">static ensemble&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_the_screen.html#acf4740d4e98aa3c665a3c42061bb9a10">theEnsemble</a> (varargin)</td></tr>
-<tr class="memdesc:acf4740d4e98aa3c665a3c42061bb9a10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility for creating or retrieving a screen ensemble, which is created either as a (local) <a class="el" href="classtops_ensemble.html" title="Aggregate objects into an ensemble for batch opertaions.">topsEnsemble</a> or for remote drawing using <a class="el" href="classdots_client_ensemble.html" title="Aggregate objects into an ensemble for remote batch opertaions.">dotsClientEnsemble</a> with default network values.  <a href="#acf4740d4e98aa3c665a3c42061bb9a10">More...</a><br /></td></tr>
-<tr class="separator:acf4740d4e98aa3c665a3c42061bb9a10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af71cb6f7212bf1f29daab1f1ebc7099f"><td class="memItemLeft" align="right" valign="top"><a id="af71cb6f7212bf1f29daab1f1ebc7099f"></a>
+static <a class="el" href="classdots_the_screen.html#a91fde0b46b612e72829535c9255c839d">isOpenFlag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_the_screen.html#af71cb6f7212bf1f29daab1f1ebc7099f">isOpen</a> ()</td></tr>
+<tr class="memdesc:af71cb6f7212bf1f29daab1f1ebc7099f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if screen is open. <br /></td></tr>
+<tr class="separator:af71cb6f7212bf1f29daab1f1ebc7099f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25873823d33a63e01d4a9438aa5a0452"><td class="memItemLeft" align="right" valign="top">static ensemble&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_the_screen.html#a25873823d33a63e01d4a9438aa5a0452">theEnsemble</a> (remoteDrawing, <a class="el" href="classdots_the_screen.html#a43736a24a8247ade8146580c5dd9bcc2">displayIndex</a>, varargin)</td></tr>
+<tr class="memdesc:a25873823d33a63e01d4a9438aa5a0452"><td class="mdescLeft">&#160;</td><td class="mdescRight">Utility for creating or retrieving a screen ensemble, which is created either as a (local) <a class="el" href="classtops_ensemble.html" title="Aggregate objects into an ensemble for batch opertaions.">topsEnsemble</a> or for remote drawing using <a class="el" href="classdots_client_ensemble.html" title="Aggregate objects into an ensemble for remote batch opertaions.">dotsClientEnsemble</a> with default network values.  <a href="#a25873823d33a63e01d4a9438aa5a0452">More...</a><br /></td></tr>
+<tr class="separator:a25873823d33a63e01d4a9438aa5a0452"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57a63c419053e2f945b9f2d8a546207e"><td class="memItemLeft" align="right" valign="top"><a id="a57a63c419053e2f945b9f2d8a546207e"></a>
 static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_the_screen.html#a57a63c419053e2f945b9f2d8a546207e">reset</a> (varargin)</td></tr>
 <tr class="memdesc:a57a63c419053e2f945b9f2d8a546207e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restore the current instance to a fresh state. <br /></td></tr>
@@ -265,6 +273,14 @@ static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <tr class="memitem:a6718f6c63815096586e57bb2ac912f15"><td class="memItemLeft" align="right" valign="top">static gammaTable values&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_the_screen.html#a6718f6c63815096586e57bb2ac912f15">makeGammaTable</a> (doTest, fileName, tableSize, targetSize)</td></tr>
 <tr class="memdesc:a6718f6c63815096586e57bb2ac912f15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes a gamma table using the optiCAL device from Cambridge Research Systems.  <a href="#a6718f6c63815096586e57bb2ac912f15">More...</a><br /></td></tr>
 <tr class="separator:a6718f6c63815096586e57bb2ac912f15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae95d01b083ff5842ace2ebc720ef3722"><td class="memItemLeft" align="right" valign="top"><a id="ae95d01b083ff5842ace2ebc720ef3722"></a>
+static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_the_screen.html#ae95d01b083ff5842ace2ebc720ef3722">openScreen</a> (remoteDrawing, <a class="el" href="classdots_the_screen.html#a43736a24a8247ade8146580c5dd9bcc2">displayIndex</a>, varargin)</td></tr>
+<tr class="memdesc:ae95d01b083ff5842ace2ebc720ef3722"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conventient routine to open a screen. <br /></td></tr>
+<tr class="separator:ae95d01b083ff5842ace2ebc720ef3722"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af07abb212bb9b19a098c9751e55eb41b"><td class="memItemLeft" align="right" valign="top"><a id="af07abb212bb9b19a098c9751e55eb41b"></a>
+static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_the_screen.html#af07abb212bb9b19a098c9751e55eb41b">closeScreen</a> ()</td></tr>
+<tr class="memdesc:af07abb212bb9b19a098c9751e55eb41b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Conventient routine to close a screen. <br /></td></tr>
+<tr class="separator:af07abb212bb9b19a098c9751e55eb41b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5462610be173120ea7547a2ed41ff7a"><td class="memItemLeft" align="right" valign="top">static frameInfo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_the_screen.html#ae5462610be173120ea7547a2ed41ff7a">blankScreen</a> (varargin)</td></tr>
 <tr class="memdesc:ae5462610be173120ea7547a2ed41ff7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenient routine to blank the current screen, even if remote.  <a href="#ae5462610be173120ea7547a2ed41ff7a">More...</a><br /></td></tr>
 <tr class="separator:ae5462610be173120ea7547a2ed41ff7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -458,8 +474,8 @@ Private Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="acf4740d4e98aa3c665a3c42061bb9a10"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf4740d4e98aa3c665a3c42061bb9a10">&#9670;&nbsp;</a></span>theEnsemble()</h2>
+<a id="a25873823d33a63e01d4a9438aa5a0452"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25873823d33a63e01d4a9438aa5a0452">&#9670;&nbsp;</a></span>theEnsemble()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -470,9 +486,25 @@ Private Methods</h2></td></tr>
         <tr>
           <td class="memname">static ensemble theEnsemble </td>
           <td>(</td>
-          <td class="paramtype">varargin&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">remoteDrawing&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="classdots_the_screen.html#a43736a24a8247ade8146580c5dd9bcc2">displayIndex</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">varargin&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -483,7 +515,7 @@ Private Methods</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Utility for creating or retrieving a screen ensemble, which is created either as a (local) <a class="el" href="classtops_ensemble.html" title="Aggregate objects into an ensemble for batch opertaions.">topsEnsemble</a> or for remote drawing using <a class="el" href="classdots_client_ensemble.html" title="Aggregate objects into an ensemble for remote batch opertaions.">dotsClientEnsemble</a> with default network values. </p>
-<p>Aguments (for creating: useRemote ... flag for creating client/server ensembles displayIndex ... 0=debug screen; 1=main screen; 2=2nd screen; etc </p>
+<p>Aguments (for creating): remoteDrawing ... flag for creating client/server ensembles displayIndex ... 0=debug screen; 1=main screen; 2=2nd screen; etc </p>
 
 </div>
 </div>

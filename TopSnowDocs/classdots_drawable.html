@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>NewTopDotFullScan: dotsDrawable Class Reference</title>
+<title>MasterScan: dotsDrawable Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,8 +22,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">NewTopDotFullScan
-   &#160;<span id="projectnumber">automatic</span>
+   <div id="projectname">MasterScan
+   &#160;<span id="projectnumber">Lab_Matlab_control Master Branch</span>
    </div>
   </td>
  </tr>
@@ -86,14 +86,15 @@ Inheritance diagram for dotsDrawable:</div>
 <area shape="rect"  href="classdots_drawable_animator.html" title="Update properties or methods of dotsDrawable objects, over time." alt="" coords="267,5,423,33"/>
 <area shape="rect"  href="classdots_drawable_text.html" title="Display a string graphically." alt="" coords="282,57,409,85"/>
 <area shape="rect"  href="classdots_drawable_textures.html" title="Make and draw OpenGL textures." alt="" coords="269,109,422,137"/>
-<area shape="rect"  href="classdots_drawable_vertices.html" title="Draw OpenGL vertices as arbitrary shapes, using buffer objects." alt="" coords="270,213,420,241"/>
+<area shape="rect"  href="classdots_drawable_vertices.html" title="Draw OpenGL vertices as arbitrary shapes, using buffer objects." alt="" coords="270,217,420,245"/>
 <area shape="rect"  href="classhandle.html" title=" " alt="" coords="5,83,67,111"/>
-<area shape="rect"  href="classdots_drawable_images.html" title="Draw images from files." alt="" coords="495,82,641,110"/>
-<area shape="rect"  href="classdots_drawable_arcs.html" title="Draw one or multiple arcs at once." alt="" coords="503,134,633,162"/>
-<area shape="rect"  href="classdots_drawable_dot_kinetogram.html" title="Animate random dots that carry a motion signal." alt="" coords="472,186,664,214"/>
-<area shape="rect"  href="classdots_drawable_explosion.html" title="Animate an explosion of many particles." alt="" coords="488,238,648,266"/>
-<area shape="rect"  href="classdots_drawable_lines.html" title="Draw one or multiple lines at once." alt="" coords="501,290,635,318"/>
-<area shape="rect"  href="classdots_drawable_targets.html" title=" " alt="" coords="495,342,641,370"/>
+<area shape="rect"  href="classdots_drawable_images.html" title="Draw images from files." alt="" coords="495,53,641,81"/>
+<area shape="rect"  href="classdots_drawable_arcs.html" title="Draw one or multiple arcs at once." alt="" coords="503,105,633,133"/>
+<area shape="rect"  href="classdots_drawable_dot_kinetogram.html" title="Animate random dots that carry a motion signal." alt="" coords="472,157,664,185"/>
+<area shape="rect"  href="classdots_drawable_dot_kinetogram_debug.html" title=" " alt="" coords="472,209,664,253"/>
+<area shape="rect"  href="classdots_drawable_explosion.html" title="Animate an explosion of many particles." alt="" coords="488,277,648,305"/>
+<area shape="rect"  href="classdots_drawable_lines.html" title="Draw one or multiple lines at once." alt="" coords="501,329,635,357"/>
+<area shape="rect"  href="classdots_drawable_targets.html" title="Draw one or multiple polygon target at once." alt="" coords="495,381,641,409"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -136,11 +137,11 @@ Static Methods</h2></td></tr>
 <tr class="memitem:a55fc90ba7a7b560039ad5b1345ead346"><td class="memItemLeft" align="right" valign="top">static frameInfo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_drawable.html#a55fc90ba7a7b560039ad5b1345ead346">drawFrame</a> (drawables, doClear)</td></tr>
 <tr class="memdesc:a55fc90ba7a7b560039ad5b1345ead346"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classdots_drawable.html#ad08fbd76bbbbacf9d69b02c3ca69e01e" title="Subclass must redefine draw() to draw graphics.">draw()</a> several drawable objects and show the next Screen frame.  <a href="#a55fc90ba7a7b560039ad5b1345ead346">More...</a><br /></td></tr>
 <tr class="separator:a55fc90ba7a7b560039ad5b1345ead346"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9a4d0f4519f93d771dda64e0e9a82b1"><td class="memItemLeft" align="right" valign="top">static ensemble&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_drawable.html#aa9a4d0f4519f93d771dda64e0e9a82b1">makeEnsemble</a> (name, objects, automateDraw)</td></tr>
-<tr class="memdesc:aa9a4d0f4519f93d771dda64e0e9a82b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenient utility for combining a bunch of drawables into an ensemble.  <a href="#aa9a4d0f4519f93d771dda64e0e9a82b1">More...</a><br /></td></tr>
-<tr class="separator:aa9a4d0f4519f93d771dda64e0e9a82b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ecf29a6a2ac2483795a4c8a484edb63"><td class="memItemLeft" align="right" valign="top">static ensemble&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_drawable.html#a7ecf29a6a2ac2483795a4c8a484edb63">makeEnsemble</a> (name, objects)</td></tr>
+<tr class="memdesc:a7ecf29a6a2ac2483795a4c8a484edb63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenient utility for combining a bunch of drawables into an ensemble.  <a href="#a7ecf29a6a2ac2483795a4c8a484edb63">More...</a><br /></td></tr>
+<tr class="separator:a7ecf29a6a2ac2483795a4c8a484edb63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f591c6213007caa745adf9e05b58984"><td class="memItemLeft" align="right" valign="top">static frameInfo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_drawable.html#a1f591c6213007caa745adf9e05b58984">drawEnsemble</a> (ensemble, args, prepareFlag, showDuration, pauseDuration)</td></tr>
-<tr class="memdesc:a1f591c6213007caa745adf9e05b58984"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenient utility for drawing an ensemble.  <a href="#a1f591c6213007caa745adf9e05b58984">More...</a><br /></td></tr>
+<tr class="memdesc:a1f591c6213007caa745adf9e05b58984"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenient utility for drawing an ensemble either locally or remotely.  <a href="#a1f591c6213007caa745adf9e05b58984">More...</a><br /></td></tr>
 <tr class="separator:a1f591c6213007caa745adf9e05b58984"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Methods</h2>
@@ -191,8 +192,8 @@ Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="aa9a4d0f4519f93d771dda64e0e9a82b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa9a4d0f4519f93d771dda64e0e9a82b1">&#9670;&nbsp;</a></span>makeEnsemble()</h2>
+<a id="a7ecf29a6a2ac2483795a4c8a484edb63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ecf29a6a2ac2483795a4c8a484edb63">&#9670;&nbsp;</a></span>makeEnsemble()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -210,12 +211,6 @@ Static Methods</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">objects&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">automateDraw&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -232,7 +227,7 @@ Static Methods</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Convenient utility for combining a bunch of drawables into an ensemble. </p>
-<p>Aguments: name ... optional &lt;string&gt; name of the ensemble/composite objects ... cell array of drawable objects screenEnsemble ... ensemble containing the screen object, which we use to determine client/server behavior automateDraw ... flag indicating whether or not to add automate draw method </p>
+<p>Aguments: name ... optional &lt;string&gt; name of the ensemble/composite objects ... cell array of drawable objects </p>
 
 </div>
 </div>
@@ -288,7 +283,7 @@ Static Methods</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Convenient utility for drawing an ensemble. </p>
+<p>Convenient utility for drawing an ensemble either locally or remotely. </p>
 <p>Aguments: ensemble ... the ensemble args ... cell array of cell arrays of property/value pairs for each object in the ensemble prepareFlag ... whether to call prepareToDrawInWindow showDuration ... in sec pauseDuration ... in sec </p>
 
 </div>

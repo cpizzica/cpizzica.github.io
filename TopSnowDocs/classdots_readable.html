@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>NewTopDotFullScan: dotsReadable Class Reference</title>
+<title>MasterScan: dotsReadable Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,8 +22,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">NewTopDotFullScan
-   &#160;<span id="projectnumber">automatic</span>
+   <div id="projectname">MasterScan
+   &#160;<span id="projectnumber">Lab_Matlab_control Master Branch</span>
    </div>
   </td>
  </tr>
@@ -230,6 +230,10 @@ Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_readable.html#a591ab93875737e3c161dee24f086e620">calibrationUI</a></td></tr>
 <tr class="memdesc:a591ab93875737e3c161dee24f086e620"><td class="mdescLeft">&#160;</td><td class="mdescRight">Possibly use a keyboard or other UI to help with calibration. <br /></td></tr>
 <tr class="separator:a591ab93875737e3c161dee24f086e620"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae075de55c9b84ea0c3e40d77b373922"><td class="memItemLeft" align="right" valign="top"><a id="aae075de55c9b84ea0c3e40d77b373922"></a>
+Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_readable.html#aae075de55c9b84ea0c3e40d77b373922">deactivateEventsAtStartTrial</a> =false</td></tr>
+<tr class="memdesc:aae075de55c9b84ea0c3e40d77b373922"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag to deactivate all events at the beginning of each trial. <br /></td></tr>
+<tr class="separator:aae075de55c9b84ea0c3e40d77b373922"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Properties</h2></td></tr>
@@ -269,6 +273,10 @@ Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_readable.html#ab48e1e20d4ed1161160c616733ffbff1">defaultEventPrefix</a> = 'event'</td></tr>
 <tr class="memdesc:ab48e1e20d4ed1161160c616733ffbff1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default prefix for event names: &lt;prefix&gt;_&lt;componentName&gt; <br /></td></tr>
 <tr class="separator:ab48e1e20d4ed1161160c616733ffbff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa56e150b1935360eeefefad8266eea3d"><td class="memItemLeft" align="right" valign="top"><a id="aa56e150b1935360eeefefad8266eea3d"></a>
+Property&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_readable.html#aa56e150b1935360eeefefad8266eea3d">eventSets</a></td></tr>
+<tr class="memdesc:aa56e150b1935360eeefefad8266eea3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strutures with different named event definitions, in case we want to quickly swap between them. <br /></td></tr>
+<tr class="separator:aa56e150b1935360eeefefad8266eea3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Methods</h2></td></tr>
@@ -354,19 +362,31 @@ self&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:af739afcc6b4b09a3df94b51b1418401c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_readable.html#af739afcc6b4b09a3df94b51b1418401c">defineEventsFromComponents</a> (self, names, varargin)</td></tr>
 <tr class="memdesc:af739afcc6b4b09a3df94b51b1418401c"><td class="mdescLeft">&#160;</td><td class="mdescRight">defineEventsFromComponents  <a href="#af739afcc6b4b09a3df94b51b1418401c">More...</a><br /></td></tr>
 <tr class="separator:af739afcc6b4b09a3df94b51b1418401c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af31a3a9d90945df3f24d5d1cd9671ad6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_readable.html#af31a3a9d90945df3f24d5d1cd9671ad6">defineEventsFromStruct</a> (self, eventStruct)</td></tr>
-<tr class="memdesc:af31a3a9d90945df3f24d5d1cd9671ad6"><td class="mdescLeft">&#160;</td><td class="mdescRight">defineEventsFromStruct  <a href="#af31a3a9d90945df3f24d5d1cd9671ad6">More...</a><br /></td></tr>
-<tr class="separator:af31a3a9d90945df3f24d5d1cd9671ad6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a240c1f0a9c40bc26ec1ca990b94901b7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_readable.html#a240c1f0a9c40bc26ec1ca990b94901b7">defineEventsFromStruct</a> (self, eventStruct, setName, keepExisting, inactivate)</td></tr>
+<tr class="memdesc:a240c1f0a9c40bc26ec1ca990b94901b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">defineEventsFromStruct  <a href="#a240c1f0a9c40bc26ec1ca990b94901b7">More...</a><br /></td></tr>
+<tr class="separator:a240c1f0a9c40bc26ec1ca990b94901b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad22e6acebfb63bb2275ffd4fb7b3a835"><td class="memItemLeft" align="right" valign="top"><a id="ad22e6acebfb63bb2275ffd4fb7b3a835"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_readable.html#ad22e6acebfb63bb2275ffd4fb7b3a835">showActiveEvents</a> (self)</td></tr>
 <tr class="memdesc:ad22e6acebfb63bb2275ffd4fb7b3a835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mostly for debugging. <br /></td></tr>
 <tr class="separator:ad22e6acebfb63bb2275ffd4fb7b3a835"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5833d84a2916b95112694233e6529c1"><td class="memItemLeft" align="right" valign="top"><a id="ab5833d84a2916b95112694233e6529c1"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_readable.html#ab5833d84a2916b95112694233e6529c1">activateEventSet</a> (self, name)</td></tr>
+<tr class="memdesc:ab5833d84a2916b95112694233e6529c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Swap in a set of events. <br /></td></tr>
+<tr class="separator:ab5833d84a2916b95112694233e6529c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaae1d36a931852d071d59cedba50da69"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_readable.html#aaae1d36a931852d071d59cedba50da69">activateEvents</a> (self)</td></tr>
 <tr class="memdesc:aaae1d36a931852d071d59cedba50da69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Activate all events.  <a href="#aaae1d36a931852d071d59cedba50da69">More...</a><br /></td></tr>
 <tr class="separator:aaae1d36a931852d071d59cedba50da69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34e04d83e190f0f0e2040cd9e74e3152"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_readable.html#a34e04d83e190f0f0e2040cd9e74e3152">deactivateEvents</a> (self)</td></tr>
 <tr class="memdesc:a34e04d83e190f0f0e2040cd9e74e3152"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deactivate all events.  <a href="#a34e04d83e190f0f0e2040cd9e74e3152">More...</a><br /></td></tr>
 <tr class="separator:a34e04d83e190f0f0e2040cd9e74e3152"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a43a9e2f55940acd8afd00efe0246d1"><td class="memItemLeft" align="right" valign="top"><a id="a1a43a9e2f55940acd8afd00efe0246d1"></a>
+activeFlags&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_readable.html#a1a43a9e2f55940acd8afd00efe0246d1">getActiveFlags</a> (self)</td></tr>
+<tr class="memdesc:a1a43a9e2f55940acd8afd00efe0246d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all active flags. <br /></td></tr>
+<tr class="separator:a1a43a9e2f55940acd8afd00efe0246d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a343280315025271037561a3ba5bd3bc7"><td class="memItemLeft" align="right" valign="top"><a id="a343280315025271037561a3ba5bd3bc7"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_readable.html#a343280315025271037561a3ba5bd3bc7">setActiveFlags</a> (self, activeFlags)</td></tr>
+<tr class="memdesc:a343280315025271037561a3ba5bd3bc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set all active flags from array. <br /></td></tr>
+<tr class="separator:a343280315025271037561a3ba5bd3bc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8311d9bdcb29e54b15bffd379d5ed383"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_readable.html#a8311d9bdcb29e54b15bffd379d5ed383">setEventsActiveFlag</a> (self, activateList, deactivateList)</td></tr>
 <tr class="memdesc:a8311d9bdcb29e54b15bffd379d5ed383"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set/unset activeFlag.  <a href="#a8311d9bdcb29e54b15bffd379d5ed383">More...</a><br /></td></tr>
 <tr class="separator:a8311d9bdcb29e54b15bffd379d5ed383"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -382,12 +402,15 @@ self&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </blockquote>
  <a href="#aa83b997e3e50aa46da367dcb660689f9">More...</a><br /></td></tr>
 <tr class="separator:aa83b997e3e50aa46da367dcb660689f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90fa0f3f7c0adfdb81a5c0db5eb05fa3"><td class="memItemLeft" align="right" valign="top"><a id="a90fa0f3f7c0adfdb81a5c0db5eb05fa3"></a>
-nEvents&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_readable.html#a90fa0f3f7c0adfdb81a5c0db5eb05fa3">getNumberOfEvents</a> (self)</td></tr>
+<tr class="memitem:a57721103768f8c8ccf57df4fc1cc4663"><td class="memItemLeft" align="right" valign="top"><a id="a57721103768f8c8ccf57df4fc1cc4663"></a>
+name waitTime data&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_readable.html#a57721103768f8c8ccf57df4fc1cc4663">waitForEvents</a> (self, eventNames, maxWait)</td></tr>
+<tr class="memdesc:a57721103768f8c8ccf57df4fc1cc4663"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait for event(s) <br /></td></tr>
+<tr class="separator:a57721103768f8c8ccf57df4fc1cc4663"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90fa0f3f7c0adfdb81a5c0db5eb05fa3"><td class="memItemLeft" align="right" valign="top">nEvents&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_readable.html#a90fa0f3f7c0adfdb81a5c0db5eb05fa3">getNumberOfEvents</a> (self)</td></tr>
 <tr class="memdesc:a90fa0f3f7c0adfdb81a5c0db5eb05fa3"><td class="mdescLeft">&#160;</td><td class="mdescRight"><blockquote class="doxtable">
-<p>Get the number of events in eventQueue. @detials Returns the number of events which are currently enqueued in eventQueue.</p>
+<p>Get the number of events in eventQueue. </p>
 </blockquote>
-<br /></td></tr>
+ <a href="#a90fa0f3f7c0adfdb81a5c0db5eb05fa3">More...</a><br /></td></tr>
 <tr class="separator:a90fa0f3f7c0adfdb81a5c0db5eb05fa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43fe8d0f76c4b772b1acea96f9996f22"><td class="memItemLeft" align="right" valign="top">IDs&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_readable.html#a43fe8d0f76c4b772b1acea96f9996f22">getComponentIDs</a> (self)</td></tr>
 <tr class="memdesc:a43fe8d0f76c4b772b1acea96f9996f22"><td class="mdescLeft">&#160;</td><td class="mdescRight"><blockquote class="doxtable">
@@ -868,13 +891,10 @@ Static Methods</h2></td></tr>
 </blockquote>
 </p>
 <p>Required input: </p><blockquote class="doxtable">
-<p>eventName ... string name for an event of interest </p>
+<p>name ... string name for an event of interest </p>
 </blockquote>
-<p>Optional inputs: isActive ... whether event is current active </p><blockquote class="doxtable">
-<p>isInverted ... whether to invert event detection logic </p>
-</blockquote>
-<p>property/value pairs for the following: </p><blockquote class="doxtable">
-<p>'component' ... string name or one of the integer IDs in components 'lowValue' ... the lower bound on the event of interest 'highValue' ... the upper bound on the event of interest </p>
+<p>Optional property/value pairs: </p><blockquote class="doxtable">
+<p>'component' ... string name or one of the integer IDs in components 'isActive' ... whether event is current active 'isInverted' ... whether to invert event detection logic 'lowValue' ... the lower bound on the event of interest 'highValue' ... the upper bound on the event of interest 'isRelease' ... event on release of component </p>
 </blockquote>
 <blockquote class="doxtable">
 <p></p>
@@ -927,8 +947,8 @@ Static Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="af31a3a9d90945df3f24d5d1cd9671ad6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af31a3a9d90945df3f24d5d1cd9671ad6">&#9670;&nbsp;</a></span>defineEventsFromStruct()</h2>
+<a id="a240c1f0a9c40bc26ec1ca990b94901b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a240c1f0a9c40bc26ec1ca990b94901b7">&#9670;&nbsp;</a></span>defineEventsFromStruct()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -943,6 +963,24 @@ Static Methods</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">eventStruct&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">setName&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">keepExisting&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">inactivate&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -954,7 +992,7 @@ Static Methods</h2></td></tr>
 </div><div class="memdoc">
 
 <p>defineEventsFromStruct </p>
-<p>Takes an array of structs with fields corresponding to property/value pairs used by defineEvent The only required field is 'name' (first argument to defineEvent), all others are optional paired arguments </p>
+<p>Takes a structure with information about events and calls defineEvent for each event. Arguments: eventStruct ... array of structs, one per event, with fields corresponding to properties defined in defineEvents (which may be overridden in subclasses). The only required field is 'name' (first argument to defineEvent), all others are optional paired arguments. setName ... string name to use to save this set of event definitions keepExisting ... string to keep existing definitions (default false) startInactive ... flag for initial isActive flag (default false) </p>
 
 </div>
 </div>
@@ -1082,7 +1120,7 @@ Static Methods</h2></td></tr>
 <p><a class="el" href="classdots_readable.html#adab1f3f81aa28088c8312c13995a5106" title="Get the next event that was detected in read().">getNextEvent()</a> returns the <b>name</b> of the the next queued event of interest. The name corresponds to one of the <b>name</b> values in eventDefinitions. Also returns as second output the data which caused the event of interest. The data corresponds to one of the rows of history. Thus, the data has the form [ID, value, time].</p>
 <p>Additional information about the event can be found in eventDefinitions(ID). Additional information about the component which caused the event can be found in components.</p>
 <p>By default, the next event is read out of the queue and removed. If <em>isPeek</em> is provided and true, the event is read out but left in the queue to be read again.</p>
-<p>If isAutoRead is set to true, invokes <a class="el" href="classdots_readable.html#a92f6a631059f85262380255391242b5f" title="Add incoming data to history and detect events of interest.">read()</a> to update component data before getting the next event. jig added cell array of strings acceptedEvents to list names of events that can be used</p>
+<p>If isAutoRead is set to true, invokes <a class="el" href="classdots_readable.html#a92f6a631059f85262380255391242b5f" title="Add incoming data to history and detect events of interest.">read()</a> to update component data before getting the next event. jig added cell array of strings acceptedEvents to list names of events that can be used </p>
 
 </div>
 </div>
@@ -1124,7 +1162,31 @@ Static Methods</h2></td></tr>
 </dl>
 <p><a class="el" href="classdots_readable.html#aa83b997e3e50aa46da367dcb660689f9" title="Get events that are happening at the current time.">getHappeningEvent()</a> summarizes events that are still happening, at the given <em>time</em>. If <em>time</em> is omitted, defaults to the current time. This contrasts with <a class="el" href="classdots_readable.html#adab1f3f81aa28088c8312c13995a5106" title="Get the next event that was detected in read().">getNextEvent()</a>, which recalls events that happened in the past. <a class="el" href="classdots_readable.html#aa83b997e3e50aa46da367dcb660689f9" title="Get events that are happening at the current time.">getHappeningEvent()</a> does not affect the behavior of <a class="el" href="classdots_readable.html#adab1f3f81aa28088c8312c13995a5106" title="Get the next event that was detected in read().">getNextEvent()</a> or the values in eventQueue.</p>
 <p>If no events are happening at the given time, returns ''. If one or more events is happening, returns the name of the last event that happened. Also returns as a second output the component ID for the last event.</p>
-<p>Also returns as a third output a cell array of names of all the events that are happening. Also returns as a fourth output an array of component IDs for all the events that are happening.</p>
+<p>Also returns as a third output a cell array of names of all the events that are happening. Also returns as a fourth output an array of component IDs for all the events that are happening. </p>
+
+</div>
+</div>
+<a id="a90fa0f3f7c0adfdb81a5c0db5eb05fa3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90fa0f3f7c0adfdb81a5c0db5eb05fa3">&#9670;&nbsp;</a></span>getNumberOfEvents()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">nEvents getNumberOfEvents </td>
+          <td>(</td>
+          <td class="paramtype">self&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><blockquote class="doxtable">
+<p>Get the number of events in eventQueue. </p>
+</blockquote>
+</p>
+<p>Returns the number of events which are currently enqueued in eventQueue. </p>
 
 </div>
 </div>
@@ -1148,7 +1210,7 @@ Static Methods</h2></td></tr>
 <p>Get an array of unique integer component IDs. </p>
 </blockquote>
 </p>
-<p>Returns an array of component IDs, which are unique, small, positive integers which identify device components.</p>
+<p>Returns an array of component IDs, which are unique, small, positive integers which identify device components. </p>
 
 </div>
 </div>
@@ -1240,7 +1302,7 @@ Static Methods</h2></td></tr>
 <p>Open a figure with continuously read device data. </p>
 </blockquote>
 </p>
-<p>Opens a new figure and plots component and event data. Continuously invokes <a class="el" href="classdots_readable.html#a92f6a631059f85262380255391242b5f" title="Add incoming data to history and detect events of interest.">read()</a> and updates the plot as long as the figure is open.</p>
+<p>Opens a new figure and plots component and event data. Continuously invokes <a class="el" href="classdots_readable.html#a92f6a631059f85262380255391242b5f" title="Add incoming data to history and detect events of interest.">read()</a> and updates the plot as long as the figure is open. </p>
 
 </div>
 </div>
@@ -1273,7 +1335,7 @@ Static Methods</h2></td></tr>
 </blockquote>
 </p>
 <p>Subclasses must redefine <a class="el" href="classdots_readable.html#aba00bb8f739c0ebd275337a2fc6b52f5" title="Locate and acquire input device resources (for subclasses).">openDevice()</a>. They should expect <a class="el" href="classdots_readable.html#aba00bb8f739c0ebd275337a2fc6b52f5" title="Locate and acquire input device resources (for subclasses).">openDevice()</a> to be called during <a class="el" href="classdots_readable.html#a385392e20465b3db1a947d2cf6a41aba" title="Locate, acquire, configure, etc. device and component resources.">initialize()</a> and when an object is constructed. <a class="el" href="classdots_readable.html#aba00bb8f739c0ebd275337a2fc6b52f5" title="Locate and acquire input device resources (for subclasses).">openDevice()</a> should locate, acquire, configure, etc. major device resources required for reading data. Specific resources relating to device components, like individual buttons of a gamepad, should be handled in <a class="el" href="classdots_readable.html#aaf405b1122fd551ec4daa36d7dcdc689" title="Locate and acquire device components (for subclasses).">openComponents()</a>.</p>
-<p><a class="el" href="classdots_readable.html#aba00bb8f739c0ebd275337a2fc6b52f5" title="Locate and acquire input device resources (for subclasses).">openDevice()</a> should return true if resources were successfully acquired and individual components are ready to be opened. Otherwise, <a class="el" href="classdots_readable.html#aba00bb8f739c0ebd275337a2fc6b52f5" title="Locate and acquire input device resources (for subclasses).">openDevice()</a> should return false.</p>
+<p><a class="el" href="classdots_readable.html#aba00bb8f739c0ebd275337a2fc6b52f5" title="Locate and acquire input device resources (for subclasses).">openDevice()</a> should return true if resources were successfully acquired and individual components are ready to be opened. Otherwise, <a class="el" href="classdots_readable.html#aba00bb8f739c0ebd275337a2fc6b52f5" title="Locate and acquire input device resources (for subclasses).">openDevice()</a> should return false. </p>
 
 </div>
 </div>
@@ -1305,7 +1367,7 @@ Static Methods</h2></td></tr>
 <p>Release input device resources (for subclasses). </p>
 </blockquote>
 </p>
-<p>Subclasses must redefine closedevice(). Any resources that were acquired by <a class="el" href="classdots_readable.html#aba00bb8f739c0ebd275337a2fc6b52f5" title="Locate and acquire input device resources (for subclasses).">openDevice()</a> should be released. It should be safe to call <a class="el" href="classdots_readable.html#ab72a3d4f16e7d63e37bf7909ba2d23ec" title="Release input device resources (for subclasses).">closeDevice()</a> multiple times in a row.</p>
+<p>Subclasses must redefine closedevice(). Any resources that were acquired by <a class="el" href="classdots_readable.html#aba00bb8f739c0ebd275337a2fc6b52f5" title="Locate and acquire input device resources (for subclasses).">openDevice()</a> should be released. It should be safe to call <a class="el" href="classdots_readable.html#ab72a3d4f16e7d63e37bf7909ba2d23ec" title="Release input device resources (for subclasses).">closeDevice()</a> multiple times in a row. </p>
 
 </div>
 </div>
@@ -1347,7 +1409,7 @@ Static Methods</h2></td></tr>
 <p>Calibrate the device (for subclasses). </p>
 </blockquote>
 </p>
-<p>Subclasses must redefine <a class="el" href="classdots_readable.html#a50bb04b2e8a95204cedd1bd706caa9ee" title="Calibrate the device (for subclasses).">calibrateDevice()</a>. It should be safe to call <a class="el" href="classdots_readable.html#a50bb04b2e8a95204cedd1bd706caa9ee" title="Calibrate the device (for subclasses).">calibrateDevice()</a> multiple times in a row.</p>
+<p>Subclasses must redefine <a class="el" href="classdots_readable.html#a50bb04b2e8a95204cedd1bd706caa9ee" title="Calibrate the device (for subclasses).">calibrateDevice()</a>. It should be safe to call <a class="el" href="classdots_readable.html#a50bb04b2e8a95204cedd1bd706caa9ee" title="Calibrate the device (for subclasses).">calibrateDevice()</a> multiple times in a row. </p>
 
 </div>
 </div>
@@ -1381,7 +1443,7 @@ Static Methods</h2></td></tr>
 </p>
 <p>Subclasses must redefine <a class="el" href="classdots_readable.html#aaf405b1122fd551ec4daa36d7dcdc689" title="Locate and acquire device components (for subclasses).">openComponents()</a>. They should expect <a class="el" href="classdots_readable.html#aaf405b1122fd551ec4daa36d7dcdc689" title="Locate and acquire device components (for subclasses).">openComponents()</a> to be called immediately after a successful call to <a class="el" href="classdots_readable.html#aba00bb8f739c0ebd275337a2fc6b52f5" title="Locate and acquire input device resources (for subclasses).">openDevice()</a>. Assuming the device was opened successfully, <a class="el" href="classdots_readable.html#aaf405b1122fd551ec4daa36d7dcdc689" title="Locate and acquire device components (for subclasses).">openComponents()</a> should identify, acquire, configure, etc. specific components of interest, such as individual buttons on a gamepad.</p>
 <p><a class="el" href="classdots_readable.html#aaf405b1122fd551ec4daa36d7dcdc689" title="Locate and acquire device components (for subclasses).">openComponents()</a> must assign a name and a unique ID to each component. Each name should be a short, human-readable string. Each ID should be a unique, small, greater-than-0 integer.</p>
-<p><a class="el" href="classdots_readable.html#aaf405b1122fd551ec4daa36d7dcdc689" title="Locate and acquire device components (for subclasses).">openComponents()</a> must return names and IDs as a struct array with fields <b>ID</b> and <b>name</b>. The struct array should have one element per component. Subclasses may add additional fields to the components struct array, but <b>ID</b> and <b>name</b> are mandatory.</p>
+<p><a class="el" href="classdots_readable.html#aaf405b1122fd551ec4daa36d7dcdc689" title="Locate and acquire device components (for subclasses).">openComponents()</a> must return names and IDs as a struct array with fields <b>ID</b> and <b>name</b>. The struct array should have one element per component. Subclasses may add additional fields to the components struct array, but <b>ID</b> and <b>name</b> are mandatory. </p>
 
 </div>
 </div>
@@ -1413,7 +1475,7 @@ Static Methods</h2></td></tr>
 <p>Release device components (for subclasses). </p>
 </blockquote>
 </p>
-<p>Subclasses must redefine <a class="el" href="classdots_readable.html#a6c0f0fe86d7a8ff4f3d8dfc182455cc0" title="Release device components (for subclasses).">closeComponents()</a>. Any resources that were acquired by <a class="el" href="classdots_readable.html#aaf405b1122fd551ec4daa36d7dcdc689" title="Locate and acquire device components (for subclasses).">openComponents()</a> should be released. It should be safe to call closeComponentes() multiple times in a row.</p>
+<p>Subclasses must redefine <a class="el" href="classdots_readable.html#a6c0f0fe86d7a8ff4f3d8dfc182455cc0" title="Release device components (for subclasses).">closeComponents()</a>. Any resources that were acquired by <a class="el" href="classdots_readable.html#aaf405b1122fd551ec4daa36d7dcdc689" title="Locate and acquire device components (for subclasses).">openComponents()</a> should be released. It should be safe to call closeComponentes() multiple times in a row. </p>
 
 </div>
 </div>
@@ -1446,7 +1508,7 @@ Static Methods</h2></td></tr>
 </blockquote>
 </p>
 <p>Subclasses must redefine <a class="el" href="classdots_readable.html#a38151b897eccabb4caca82a4a0ae5255" title="Read and format incoming data (for subclasses).">readNewData()</a> to update input devices, read from device components, and put data in the expected format.</p>
-<p><a class="el" href="classdots_readable.html#a38151b897eccabb4caca82a4a0ae5255" title="Read and format incoming data (for subclasses).">readNewData()</a> must return an nx3 matrix of data with rows of the form [ID, value, time]. Each <b>ID</b> must match one of the values in components.ID. Each <b>value</b> should be a new value that was read from the component. Each <b>time</b> should be a timestamp asociated with that value. Only new data, which has not yet been read, should be returned from <a class="el" href="classdots_readable.html#a38151b897eccabb4caca82a4a0ae5255" title="Read and format incoming data (for subclasses).">readNewData()</a>.</p>
+<p><a class="el" href="classdots_readable.html#a38151b897eccabb4caca82a4a0ae5255" title="Read and format incoming data (for subclasses).">readNewData()</a> must return an nx3 matrix of data with rows of the form [ID, value, time]. Each <b>ID</b> must match one of the values in components.ID. Each <b>value</b> should be a new value that was read from the component. Each <b>time</b> should be a timestamp asociated with that value. Only new data, which has not yet been read, should be returned from <a class="el" href="classdots_readable.html#a38151b897eccabb4caca82a4a0ae5255" title="Read and format incoming data (for subclasses).">readNewData()</a>. </p>
 
 </div>
 </div>
@@ -1495,7 +1557,7 @@ Static Methods</h2></td></tr>
   </dd>
 </dl>
 <p>Expects rows of <em>data</em> to have the form [ID, value, time]. Uses ID values to look up parameters in eventDefinitions, and performs logical comparisons to determine which rows of <em>data</em> qualify as events of interest.</p>
-<p>Returns a logical array with one element per row of <em>data</em>. Where the array is true, the corresponding row of <em>data</em> qualifies as an event of interest. If data is empty, returns [].</p>
+<p>Returns a logical array with one element per row of <em>data</em>. Where the array is true, the corresponding row of <em>data</em> qualifies as an event of interest. If data is empty, returns []. </p>
 
 </div>
 </div>
@@ -1552,7 +1614,7 @@ Static Methods</h2></td></tr>
 </dl>
 <p>Changes the size of eventQueue to agree with the given <em>minSize</em>. If <em>minSize</em> is smaller than the number of events currently in eventQueue, the size of the queue remains unchanged.</p>
 <p>If <em>doClear</em> is true, deletes any previously queued events. This is a way to initialize eventQueue. If doClear is false, packs any queued events into the beginning of eventQueue. Events are re-packed regardless of <em>minSize</em>.</p>
-<p>Returns the new size of eventQueue, which is at least <em>minSize</em>. </p>
+<p>Returns the new size of eventQueue, which is at least <em>minSize</em>.</p>
 
 </div>
 </div>
@@ -1600,7 +1662,7 @@ Static Methods</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>Adds one or more new <em>eventValues</em> to eventQueue and does queue accounting. Returns the new total number of events in eventQueue. </p>
+<p>Adds one or more new <em>eventValues</em> to eventQueue and does queue accounting. Returns the new total number of events in eventQueue.</p>
 
 </div>
 </div>
@@ -1649,7 +1711,7 @@ Static Methods</h2></td></tr>
   </dd>
 </dl>
 <p>Gets the next event from eventQueue and does queue accounting. If <em>isPeek</em> is provided and equal to true, leaves the event in the queue to be read again. Otherwise, removes the event.</p>
-<p>Returns the next value queued in eventQueue. If there are no queued values, returns []. Returns as a second argument the new total number og events in eventQueue. </p>
+<p>Returns the next value queued in eventQueue. If there are no queued values, returns []. Returns as a second argument the new total number og events in eventQueue.</p>
 
 </div>
 </div>
@@ -1699,7 +1761,7 @@ Static Methods</h2></td></tr>
   </dd>
 </dl>
 <p>Checks whether any of the given <em>readables</em> currently has an event happening with the given <em>eventName</em>. Does not invoke <a class="el" href="classdots_readable.html#a92f6a631059f85262380255391242b5f" title="Add incoming data to history and detect events of interest.">read()</a> for any readable.</p>
-<p>Returns true if any of given <em>readables</em> has <em>eventName</em> happening. Returns as a second output the data associated with the event. The data has the form [ID, value, time]. Returns as a third output the readable which has <em>eventName</em> happening. If more than one of the given <em>readables</em> has <em>eventName</em> happening, only returns the first readable. </p>
+<p>Returns true if any of given <em>readables</em> has <em>eventName</em> happening. Returns as a second output the data associated with the event. The data has the form [ID, value, time]. Returns as a third output the readable which has <em>eventName</em> happening. If more than one of the given <em>readables</em> has <em>eventName</em> happening, only returns the first readable.</p>
 
 </div>
 </div>
@@ -1756,7 +1818,7 @@ Static Methods</h2></td></tr>
   </dd>
 </dl>
 <p>Waits for one of of the given <em>readables</em> to report that the given <em>eventName</em> happened. <em>maxWait</em> specifies how long to wait before giving up. Uses <a class="el" href="classdots_readable.html#a7c04ca4ce9824befda7e07f15d8fb33e" title="Get the current time from clockFunction.">getDeviceTime()</a> of the first readable to keep track of time. Invokes <a class="el" href="classdots_readable.html#a92f6a631059f85262380255391242b5f" title="Add incoming data to history and detect events of interest.">read()</a> and checks each readable for events at least once, even if <em>maxWait</em> is zero or negative.</p>
-<p>Returns true if any of given <em>readables</em> reports that <em>eventName</em> happened before <em>maxWait</em>. Returns as a second output the amount of time waited. Returns as a third output the data associated with the event. The data has the form [ID, value, time]. Returns as a fourth output the readable which reported <em>eventName</em>. If more than one of the given <em>readables</em> reports <em>eventName</em>, only returns the first readable. </p>
+<p>Returns true if any of given <em>readables</em> reports that <em>eventName</em> happened before <em>maxWait</em>. Returns as a second output the amount of time waited. Returns as a third output the data associated with the event. The data has the form [ID, value, time]. Returns as a fourth output the readable which reported <em>eventName</em>. If more than one of the given <em>readables</em> reports <em>eventName</em>, only returns the first readable.</p>
 
 </div>
 </div>

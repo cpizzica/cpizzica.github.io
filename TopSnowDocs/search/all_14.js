@@ -15,7 +15,7 @@ var searchData=
   ['updatepolygons',['updatePolygons',['../classdots_drawable_targets.html#a53c71b73ed2ae057e844022e6385f600',1,'dotsDrawableTargets']]],
   ['updatesamples',['updateSamples',['../classtops_classification.html#a1cd801594c4b45eb99fe2f4456f5eb68',1,'topsClassification']]],
   ['updateserverobject',['updateServerObject',['../classdots_client_ensemble.html#a03f58b60295f2f3e90b6ddba3103a31a',1,'dotsClientEnsemble']]],
-  ['updatestatus',['updateStatus',['../classtops_tree_node_task.html#a6e8e5ba43fcfa8cc18d1680bc2b8443d',1,'topsTreeNodeTask']]],
+  ['updatestatus',['updateStatus',['../classtops_tree_node_task.html#a368fb410774c4df16e3aceae6c7848ac',1,'topsTreeNodeTask']]],
   ['usageenum',['usageEnum',['../classmex_h_i_d_usage.html#a402838aacb822729c1e6bab13aa89c6d',1,'mexHIDUsage']]],
   ['usageenumnoabr',['usageEnumNoAbr',['../classmex_h_i_d_usage.html#aeb8e663ed6a5c85428c84baa20d1ff3d',1,'mexHIDUsage']]],
   ['usagehint',['usageHint',['../classdots_drawable_vertices.html#add5386b5aa64950048b92ac6e34cc9b5',1,'dotsDrawableVertices']]],
@@ -24,5 +24,6 @@ var searchData=
   ['useexistingcalibration',['useExistingCalibration',['../classdots_readable.html#ad06e58faac265f463da232fa61d1fae4',1,'dotsReadable']]],
   ['usegui',['useGUI',['../classdots_readable.html#a27707f94d4a27bd122092e5733aa90dc',1,'dotsReadable']]],
   ['usepanels',['usePanels',['../classtops_figure.html#ad2257dbc42f1d42f81295cda8303fb70',1,'topsFigure']]],
+  ['useptb',['usePTB',['../classdots_playable_tone.html#ac0dc479a48b73c43a234dedd2e06bec7',1,'dotsPlayableTone']]],
   ['userdata',['userData',['../classtops_data_file.html#a0cfc5ba75207a41bfd5c8a88ec2ff7cb',1,'topsDataFile']]]
 ];

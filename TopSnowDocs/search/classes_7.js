@@ -26,16 +26,14 @@ var searchData=
   ['topstablepanel',['topsTablePanel',['../classtops_table_panel.html',1,'']]],
   ['topstaskhelper',['topsTaskHelper',['../classtops_task_helper.html',1,'']]],
   ['topstaskhelperdrawable',['topsTaskHelperDrawable',['../classtops_task_helper_drawable.html',1,'']]],
-  ['topstaskhelperensemble',['topsTaskHelperEnsemble',['../classtops_task_helper_ensemble.html',1,'']]],
-  ['topstaskhelperfeedback',['topsTaskHelperFeedback',['../classtops_task_helper_feedback.html',1,'']]],
+  ['topstaskhelpermessage',['topsTaskHelperMessage',['../classtops_task_helper_message.html',1,'']]],
   ['topstaskhelperplayable',['topsTaskHelperPlayable',['../classtops_task_helper_playable.html',1,'']]],
   ['topstaskhelperreadable',['topsTaskHelperReadable',['../classtops_task_helper_readable.html',1,'']]],
   ['topstaskhelperscreenensemble',['topsTaskHelperScreenEnsemble',['../classtops_task_helper_screen_ensemble.html',1,'']]],
+  ['topstaskhelpertargets',['topsTaskHelperTargets',['../classtops_task_helper_targets.html',1,'']]],
   ['topstaskhelperttl',['topsTaskHelperTTL',['../classtops_task_helper_t_t_l.html',1,'']]],
   ['topstreenode',['topsTreeNode',['../classtops_tree_node.html',1,'']]],
   ['topstreenodetask',['topsTreeNodeTask',['../classtops_tree_node_task.html',1,'']]],
-  ['topstreenodetaskreversingdots',['topsTreeNodeTaskReversingDots',['../classtops_tree_node_task_reversing_dots.html',1,'']]],
-  ['topstreenodetasksaccade',['topsTreeNodeTaskSaccade',['../classtops_tree_node_task_saccade.html',1,'']]],
   ['topstreenodetopnode',['topsTreeNodeTopNode',['../classtops_tree_node_top_node.html',1,'']]],
   ['topstreepanel',['topsTreePanel',['../classtops_tree_panel.html',1,'']]]
 ];

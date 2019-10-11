@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>NewTopDotFullScan: Class Members</title>
+<title>MasterScan: Class Members</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,8 +22,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">NewTopDotFullScan
-   &#160;<span id="projectnumber">automatic</span>
+   <div id="projectname">MasterScan
+   &#160;<span id="projectnumber">Lab_Matlab_control Master Branch</span>
    </div>
   </td>
  </tr>
@@ -90,8 +90,11 @@ $(function() {
 <li>incrementPrefix
 : <a class="el" href="classtops_data_file.html#a7fd106e26fd84e47086a33115eaeac4d">topsDataFile</a>
 </li>
-<li>independentVariables
-: <a class="el" href="classtops_tree_node_task_saccade.html#a2a6ec0fce63c504d91c16962b69eb03d">topsTreeNodeTaskSaccade</a>
+<li>incrementTrial
+: <a class="el" href="classtops_tree_node_task.html#a16edf7ba67fffbb2594f9253d6595ba1">topsTreeNodeTask</a>
+</li>
+<li>incrementTrialMethod
+: <a class="el" href="classtops_tree_node_task.html#a27f6f4223e4c0732cd6e2bc720a75f38">topsTreeNodeTask</a>
 </li>
 <li>index
 : <a class="el" href="classdots_readable_eye_mouse_simulator.html#aabb988f4130c0cd8acb9c0457d6e4c4a">dotsReadableEyeMouseSimulator</a>
@@ -105,10 +108,6 @@ $(function() {
 <li>indices
 : <a class="el" href="classdots_drawable_vertices.html#a4514e3b149da6c8efe0a534843749999">dotsDrawableVertices</a>
 , <a class="el" href="classtops_dimension.html#a4514e3b149da6c8efe0a534843749999">topsDimension</a>
-, <a class="el" href="classtops_task_helper.html#a4514e3b149da6c8efe0a534843749999">topsTaskHelper</a>
-</li>
-<li>indVars
-: <a class="el" href="classtops_tree_node_task_reversing_dots.html#a02d333e883c17ee657bb3b0805c9655d">topsTreeNodeTaskReversingDots</a>
 </li>
 <li>infoContainer
 : <a class="el" href="classtops_info_panel.html#ae38d4cb2c1dae4272dc2a500e2126f8a">topsInfoPanel</a>
@@ -156,13 +155,6 @@ $(function() {
 <li>initializeLists()
 : <a class="el" href="classdots_all_singleton_objects.html#a14617ca6a83aaa6ebbf83f6f7373428d">dotsAllSingletonObjects</a>
 </li>
-<li>initializeStateMachine()
-: <a class="el" href="classtops_tree_node_task_reversing_dots.html#aa69a878b768bb6377df5c99057af8003">topsTreeNodeTaskReversingDots</a>
-, <a class="el" href="classtops_tree_node_task_saccade.html#aa69a878b768bb6377df5c99057af8003">topsTreeNodeTaskSaccade</a>
-</li>
-<li>initializeTrialData()
-: <a class="el" href="classtops_tree_node_task_reversing_dots.html#a6486a4432567fbce253eb8d40f42ba94">topsTreeNodeTaskReversingDots</a>
-</li>
 <li>initializeUniques()
 : <a class="el" href="class_object_grapher.html#a3064bc5b0e5a524174029a7168a72a18">ObjectGrapher</a>
 </li>
@@ -180,6 +172,10 @@ $(function() {
 </li>
 <li>interleaving
 : <a class="el" href="classdots_drawable_dot_kinetogram.html#a1aa970a530de26221df98f708f098ec5">dotsDrawableDotKinetogram</a>
+, <a class="el" href="classdots_drawable_dot_kinetogram_debug.html#a1aa970a530de26221df98f708f098ec5">dotsDrawableDotKinetogramDebug</a>
+</li>
+<li>interTrialInterval
+: <a class="el" href="classtops_tree_node_task.html#a55eb94bbbe85aad1b62f2a90849a30e1">topsTreeNodeTask</a>
 </li>
 <li>invertOrder
 : <a class="el" href="classtops_call_list.html#ab3e0191ce20289f928dfd3d992feefe7">topsCallList</a>
@@ -226,9 +222,6 @@ $(function() {
 <li>isDone
 : <a class="el" href="classtops_conditions.html#a3bdec3bc537a6ba3de5669f3dff28a20">topsConditions</a>
 </li>
-<li>isEnsemble
-: <a class="el" href="classtops_task_helper.html#a93f0a092a4c4c186c52700a68188bfff">topsTaskHelper</a>
-</li>
 <li>isEventHappening()
 : <a class="el" href="classdots_readable.html#aafd696531ca31f6d3b473a2af4843ca2">dotsReadable</a>
 </li>
@@ -237,6 +230,7 @@ $(function() {
 </li>
 <li>isFlickering
 : <a class="el" href="classdots_drawable_dot_kinetogram.html#a30fa1917c03a6e8e29159e9d6c5de01d">dotsDrawableDotKinetogram</a>
+, <a class="el" href="classdots_drawable_dot_kinetogram_debug.html#a30fa1917c03a6e8e29159e9d6c5de01d">dotsDrawableDotKinetogramDebug</a>
 </li>
 <li>isFlippedHorizontal
 : <a class="el" href="classdots_drawable_text.html#ab66d8de4a72b2b3291f6e68304d08d06">dotsDrawableText</a>
@@ -263,15 +257,20 @@ $(function() {
 </li>
 <li>isLimitedLifetime
 : <a class="el" href="classdots_drawable_dot_kinetogram.html#a91d86808da66c0c82ed6152e266594ee">dotsDrawableDotKinetogram</a>
+, <a class="el" href="classdots_drawable_dot_kinetogram_debug.html#a91d86808da66c0c82ed6152e266594ee">dotsDrawableDotKinetogramDebug</a>
 </li>
 <li>isLocked
 : <a class="el" href="classtops_panel.html#aa130f9373c99c828dcfcfad382e924e1">topsPanel</a>
 </li>
 <li>isMovingAsHerd
 : <a class="el" href="classdots_drawable_dot_kinetogram.html#a6bbd1339affeade61480c756152c2788">dotsDrawableDotKinetogram</a>
+, <a class="el" href="classdots_drawable_dot_kinetogram_debug.html#a6bbd1339affeade61480c756152c2788">dotsDrawableDotKinetogramDebug</a>
 </li>
-<li>isPreparedToDraw
-: <a class="el" href="classtops_task_helper_feedback.html#acdf0a8a5536e1506bff5d4c6dbba2660">topsTaskHelperFeedback</a>
+<li>isOpen()
+: <a class="el" href="classdots_the_screen.html#af71cb6f7212bf1f29daab1f1ebc7099f">dotsTheScreen</a>
+</li>
+<li>isOpenFlag
+: <a class="el" href="classdots_the_screen.html#a91fde0b46b612e72829535c9255c839d">dotsTheScreen</a>
 </li>
 <li>isProfiling
 : <a class="el" href="classdots_client_ensemble.html#ab465ae0c30efebb5b9810d13d7546c35">dotsClientEnsemble</a>
@@ -279,8 +278,8 @@ $(function() {
 <li>isRecording
 : <a class="el" href="classdots_readable.html#a4a96cb8f7f40589042304197c6dd333e">dotsReadable</a>
 </li>
-<li>isRemote
-: <a class="el" href="classdots_the_screen.html#a0dd11fc68674edd058c281c4e499eb41">dotsTheScreen</a>
+<li>isRemoteFlag
+: <a class="el" href="classdots_the_screen.html#a76a588851458e9607dfb07727f6a96f1">dotsTheScreen</a>
 </li>
 <li>isRunning
 : <a class="el" href="classtops_runnable.html#a28c21dd77b4d24a38b68a188f2151cf1">topsRunnable</a>
@@ -316,6 +315,7 @@ $(function() {
 </li>
 <li>isWrapping
 : <a class="el" href="classdots_drawable_dot_kinetogram.html#a0455a804de62dcdb976de8d445709806">dotsDrawableDotKinetogram</a>
+, <a class="el" href="classdots_drawable_dot_kinetogram_debug.html#a0455a804de62dcdb976de8d445709806">dotsDrawableDotKinetogramDebug</a>
 </li>
 <li>iterateElements()
 : <a class="el" href="class_object_grapher.html#aae4a0925d7589b3fcb4a8a59966fd959">ObjectGrapher</a>

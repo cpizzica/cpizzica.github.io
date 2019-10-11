@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>NewTopDotFullScan: dotsWritableDOut1208FS Class Reference</title>
+<title>MasterScan: dotsWritableDOut1208FS Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,8 +22,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">NewTopDotFullScan
-   &#160;<span id="projectnumber">automatic</span>
+   <div id="projectname">MasterScan
+   &#160;<span id="projectnumber">Lab_Matlab_control Master Branch</span>
    </div>
   </td>
  </tr>
@@ -222,9 +222,6 @@ self&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:a21d5940f2427bf990f9f6621718c1ba9"><td class="memItemLeft" align="right" valign="top">timestamp ref&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_writable_d_out1208_f_s.html#a21d5940f2427bf990f9f6621718c1ba9">sendTTLPulse</a> (self, channel)</td></tr>
 <tr class="memdesc:a21d5940f2427bf990f9f6621718c1ba9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a TTL pulse, using a short TTL signal.  <a href="#a21d5940f2427bf990f9f6621718c1ba9">More...</a><br /></td></tr>
 <tr class="separator:a21d5940f2427bf990f9f6621718c1ba9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae12903874ffbcc3847c0c3bdc78e8c34"><td class="memItemLeft" align="right" valign="top">firstTimestamp lastTimestamp&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_writable_d_out1208_f_s.html#ae12903874ffbcc3847c0c3bdc78e8c34">sendTTLPulses</a> (self, channel, numPulses, pauseBetweenPulses)</td></tr>
-<tr class="memdesc:ae12903874ffbcc3847c0c3bdc78e8c34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send multiple TTL pulses Timestamps are estimates of onset times of first and last pulses.  <a href="#ae12903874ffbcc3847c0c3bdc78e8c34">More...</a><br /></td></tr>
-<tr class="separator:ae12903874ffbcc3847c0c3bdc78e8c34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf1bd6d7193955712f15c52a4f453689"><td class="memItemLeft" align="right" valign="top">timestamp ref&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdots_writable_d_out1208_f_s.html#adf1bd6d7193955712f15c52a4f453689">sendTTLSignal</a> (self, channel, signal, frequency)</td></tr>
 <tr class="memdesc:adf1bd6d7193955712f15c52a4f453689"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a TTL signal using an analog output scan.  <a href="#adf1bd6d7193955712f15c52a4f453689">More...</a><br /></td></tr>
 <tr class="separator:adf1bd6d7193955712f15c52a4f453689"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -441,48 +438,6 @@ static dout&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 <p>Uses <a class="el" href="classdots_writable_d_out1208_f_s.html#adf1bd6d7193955712f15c52a4f453689" title="Send a TTL signal using an analog output scan.">sendTTLSignal()</a> to send a single TTL pulse. The signal is specified in the pulseSignal property and should contain a single region of true, followed by false. This assumes that <em>channel</em> begins at a low value and will transition to high and back to low during the pulse.</p>
 <p>The pulseWidth property specifies the duration of each sample in pulseSignal: output sample frequency is equal to 1/pulseWidth.</p>
 <p>Returns the timestamp returned from <a class="el" href="classdots_writable_d_out1208_f_s.html#adf1bd6d7193955712f15c52a4f453689" title="Send a TTL signal using an analog output scan.">sendTTLSignal()</a>. As long as pulseSignal begins with a true value, the timestamp will be an estimate of when <em>channel</em> transitioned to a high value. See <a class="el" href="classdots_writable_d_out1208_f_s.html#adf1bd6d7193955712f15c52a4f453689" title="Send a TTL signal using an analog output scan.">sendTTLSignal()</a> for timing details and other details. </p>
-
-</div>
-</div>
-<a id="ae12903874ffbcc3847c0c3bdc78e8c34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae12903874ffbcc3847c0c3bdc78e8c34">&#9670;&nbsp;</a></span>sendTTLPulses()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">firstTimestamp lastTimestamp sendTTLPulses </td>
-          <td>(</td>
-          <td class="paramtype">self&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">channel&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">numPulses&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">pauseBetweenPulses&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Send multiple TTL pulses Timestamps are estimates of onset times of first and last pulses. </p>
 
 </div>
 </div>
