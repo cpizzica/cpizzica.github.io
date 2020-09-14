@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<script src="jspsych.js"></script>
+<script src="image-keyboard-response.js"></script>
+<script src="jspsych-canvas-keyboard-response.js"></script>
+<script src="html-keyboard-response.js"></script>
+<script src="papaparse.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="jspsych-survey-text.js"></script>
+<script type="text/javascript" src="jspsych-survey-multi-choice.js"></script>
+<script type="text/javascript" src="jspsych-external-html.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="fabric.js"> </script>
+
+
+
+</head>
+
+<body>
+</body>
+<style>	
+	</style>
+<script>
+var timeline = []
+rw = 0	
+ball_array = []
+var ChoiceDirection = ''
+var BallVisible = true
+var Leadin = 1
+var PointBonus = 1
+var PointTotal = 0
+var UpperChoiceThreshold = 150
+var LowerChoiceThreshold = 650
+var trial_time = 500
+var direction = 38
+var AbsoluteFrames = 200
+var hmm = 0
+var CDcolor = ''
+var timeleft = 10
+var begin_pre = false
+var pre_trials = 'stop'
+var SNRPicker = 0
+var whichround = 'round1'
+//var scale_factor = prompt('Scale Factor (recommended: 15-20)')		
+//var mean_picker = prompt('0397,1218,2133,3277,5201')
+var mean_picker = '2133'
+var scale_factor = 15
+var script_picker = Math.floor(Math.random() * 50) + 1
+
+	
+    function centered_message(message) {
+ return '<div class="container" style="height:800px;width:800px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;font-weight:normal;font-family:Arial;font-size:20px">' + message + '<div>'
+    }
+	
+    XYData = $ .get(`GeneratedStim/2133.csv`, function(){
+ XYActual = Papa.parse(XYData.responseText, {
+     dynamicTyping: true
+ })
+    })	
+
+	
+    function myFunctionWiden(){
+    	UpperChoiceThreshold += -20
+		LowerChoiceThreshold += 20
+    }
+    function myFunctionNarrow(){
+    	UpperChoiceThreshold += 20
+		LowerChoiceThreshold += -20
+    }
+	function myFunctionBegin(){
+		begin_pre = true
+	}
+	
+    var instruction_trial = {
+ type: 'image-keyboard-response',
+ prompt: 'Insert Instructions Slides here. Press SpaceBar to continue',
+ choices: ['spacebar'],
+ stimulus_height: 800,
+ stimulus_width: 1000,
+    };
+    var instruction_trial2 = {
+ type: 'image-keyboard-response',
+ prompt: 'Insert Instructions Slides here. Press SpaceBar to continue',
+ choices: ['spacebar'],
+ stimulus_height: 800,
+ stimulus_width: 1000,
+		on_start: function(trial){
+			AbsoluteFrames = 200
+			SNRPicker += 1
+			whichround = 'round2'
+			
+		}
+    };
+	
+	
+    var online_frame = {
+ type: 'canvas-keyboard-response',
+		trial_duration: [],
+ stimulus: [],
+ stimulus_height: 800,
+ stimulus_width: 1600,
+ choices: ['uparrow', 'downarrow'],
+ prompt: '',
+ on_start: function(trial){
+	 switch(true) {
+	 case (AbsoluteFrames > 0):
+		 var lasttimelinedata = jsPsych.currentTrial();
+		  hmm = AbsoluteFrames - rw
+		  trial.stimulus = rw
+	        trial.trial_duration = trial_time
+          TransformedDataS1 = XYActual.data[script_picker].map(x=> x * scale_factor)
+
+		 
+	 		switch(direction) {
+	 		   case 38: TransformedDataS2 = TransformedDataS1.map(x=> 400 - x)
+		 	   break;
+	 		  case 40: TransformedDataS2 = TransformedDataS1.map(x=> 400 + x)
+		 	  break;
+	                          }	 
+     trial.data = TransformedDataS2							  
+							  break;
+							  
+						  case (AbsoluteFrames <= 0):
+							  trial.data = 0 
+ }
+		},
+ on_finish: function(trial){
+	 //console.log(test_block.repetitions)
+	 var lasttimelinedata = jsPsych.currentTrial();
+	 //console.log(AbsoluteFrames - lasttimelinedata.stimulus)	 
+  
+	 switch(true) {
+     case (AbsoluteFrames >0):		 
+  if(trial.key_press === 38) {
+  	ChoiceDirection = 'Above'
+	  BallVisible = false
+	  trial_time = 0
+	  CDcolor = 'red'
+	  jsPsych.endCurrentTimeline();
+	  
+	  
+	  if(trial.key_press === 38 && direction === 38) {
+		  PointTotal += PointBonus
+		  CDcolor = 'green'
+		  jsPsych.endCurrentTimeline();
+		  
+	  }
+  }
+  if(trial.key_press === 40) {
+  	ChoiceDirection = 'Below'
+	  BallVisible = false
+	  trial_time = 0
+	  CDcolor = 'red'
+	  jsPsych.endCurrentTimeline();
+	  
+	  
+  if(trial.key_press === 40 && direction === 40) {
+	  PointTotal += PointBonus
+	  CDcolor = 'green'
+	  jsPsych.endCurrentTimeline();
+	  
+  }
+
+  }
+  switch(whichround) {
+	  case 'round1':
+		  if(rw < 10) {
+	  PointBonus = 2}
+	  else {
+	  	PointBonus = 1
+	  }
+	  break;
+  case 'round2':
+	  if(rw > 10) {
+  PointBonus = 2}
+  else {
+  	PointBonus = 1
+  }
+  break;
+}
+  AbsoluteFrames += -1
+  rw += 1
+	  break;
+  case (AbsoluteFrames <= 0):
+	  jsPsych.endCurrentTimeline();
+  }
+  }
+
+    }
+	
+	
+    var Pre_frame = {
+ type: 'canvas-keyboard-response',
+		trial_duration: [],
+ stimulus: [],
+ stimulus_height: 800,
+ stimulus_width: 1600,
+ choices: [],
+ prompt: '',
+ on_start: function(trial){
+	 switch(true) {
+	 case (AbsoluteFrames > 0):
+		 var lasttimelinedata = jsPsych.currentTrial();
+		  hmm = AbsoluteFrames - rw
+		  trial.stimulus = rw
+	        trial.trial_duration = trial_time
+	
+			TransformedDataS1 = XYActual.data[script_picker].map(x=> x * scale_factor)
+		 
+	 		switch(direction) {
+	 		   case 38: TransformedDataS2 = TransformedDataS1.map(x=> 400 - x)
+		 	   break;
+	 		  case 40: TransformedDataS2 = TransformedDataS1.map(x=> 400 + x)
+		 	  break;
+	                          }	 
+     trial.data = TransformedDataS2							  
+							  break;
+							  
+						  case (AbsoluteFrames <= 0):
+							  trial.data = 0 
+ }
+		},
+ on_finish: function(trial){
+	 var lasttimelinedata = jsPsych.currentTrial();
+  
+	 switch(true) {
+     case (AbsoluteFrames >0):		 
+  
+
+	  if (TransformedDataS2[rw] < UpperChoiceThreshold) {
+	  	ChoiceDirection = 'Above'
+		  BallVisible = false
+		  trial_time = 0
+		  CDcolor = 'red'
+		  jsPsych.endCurrentTimeline();
+	  
+	  if (TransformedDataS2[rw] < UpperChoiceThreshold && direction === 38) {
+		  PointTotal += PointBonus
+		  CDcolor = 'green'
+		  jsPsych.endCurrentTimeline();
+	  }} 
+	  
+	  if (TransformedDataS2[rw] > LowerChoiceThreshold) {
+	  	ChoiceDirection = 'Below'
+		  BallVisible = false
+		  trial_time = 0
+		  CDcolor = 'red'
+		  jsPsych.endCurrentTimeline();
+	  
+	  if (TransformedDataS2[rw] > LowerChoiceThreshold && direction === 40) {
+		  PointTotal += PointBonus
+		  CDcolor = 'green'
+		  jsPsych.endCurrentTimeline();
+		  }} 
+ 
+	 
+  
+  
+  AbsoluteFrames += -1
+  if(rw < 10) {
+	  PointBonus = 2}
+	  else {
+	  	PointBonus = 1
+	  }
+  rw += 1
+	  break;
+  case (AbsoluteFrames <= 0):
+	  jsPsych.endCurrentTimeline();
+  }
+  }
+}
+ var test_frame_int = {
+ type: 'canvas-keyboard-response',
+		trial_duration: [],
+ stimulus: [],
+ stimulus_height: 800,
+ stimulus_width: 1600,
+ choices: ['uparrow', 'downarrow'],
+ prompt: '',
+	 trial_duration: 2000,
+		on_start: function(trial){
+			trial.data = 0
+			if(AbsoluteFrames <=0){
+				trial.trial_duration = 0
+			}
+		},
+		on_finish: function(trial){
+			rw = 0
+			script_picker = Math.floor(Math.random() * 50) + 1
+			BallVisible = true
+			trial_time = 500
+			var myArray = [38,40];
+			var shuffledArray = jsPsych.randomization.shuffle(myArray);
+			direction = shuffledArray[0]
+			timeleft = 10
+			begin_pre = false
+		}
+	}
+	
+    var test_frame_int_pre = {
+    type: 'canvas-keyboard-response',
+   		trial_duration: [],
+    stimulus: [],
+    stimulus_height: 800,
+    stimulus_width: 1600,
+    choices: [],
+    prompt: '',
+		trial_duration: [],
+   		on_start: function(trial){
+   			trial.data = 0
+			trial.trial_duration = 750
+   			if(AbsoluteFrames <=0){
+   				trial.trial_duration = 0
+   			}
+   		},
+   		on_finish: function(trial){
+			timeleft += -1
+			if(begin_pre = true){
+				trial.trial_duration = 0
+			}
+   		}
+   	}	
+	
+	var end_script = {
+ type: 'html-keyboard-response',
+ stimulus: '',
+ prompt: 'Ending Screen',
+ choices: ['downarrow'],
+ stimulus_height: 800,
+ stimulus_width: 1000,
+	}
+		
+	var test_block = {
+		timeline: [online_frame],
+		repetitions: 40
+	}
+	var test_block_pre = {
+		timeline: [Pre_frame],
+		repetitions: 40
+	}
+	
+	var test_frame_int_block = {
+		timeline: [test_frame_int_pre],
+		repetitions: 10
+	}	
+	
+	var full_block = {
+		timeline: [test_block, test_frame_int],
+		repetitions: 20
+	}
+	
+	var full_block_pre = {
+		timeline: [test_block_pre, test_frame_int_block, test_frame_int],
+		repetitions: 20
+	}
+	
+    jsPsych.init({
+ timeline: [instruction_trial, full_block, instruction_trial2, full_block, end_script],
+ preload: [XYData],
+		default_iti: 0
+	})
+	</script>
+<html>
+</html>
+
