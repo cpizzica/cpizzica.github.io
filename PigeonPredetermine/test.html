@@ -28,7 +28,7 @@ ball_array = []
 var ChoiceDirection = ''
 var BallVisible = true
 var Leadin = 1
-var PointBonus = 0
+var PointBonus = 1
 var PointTotal = 0
 var UpperChoiceThreshold = 150
 var LowerChoiceThreshold = 650
@@ -36,25 +36,53 @@ var trial_time = 500
 var direction = 38
 var AbsoluteFrames = 200
 var hmm = 0
-var CDcolor = ''
+var CDcolor = 'No Choice'
 var timeleft = 10
-var begin_pre = false
 var pre_trials = 'stop'
 //var scale_factor = prompt('Scale Factor (recommended: 15-20)')		
 //var mean_picker = prompt('0397,1218,2133,3277,5201')
 var mean_picker = '2133'
 var scale_factor = 15
 var script_picker = Math.floor(Math.random() * 50) + 1
+var ScreenWidth = window.innerWidth
+var SpaceBarMessage = ''
+var SNR_Picker = 1
+	var SNR_Array = ['XY','AB','CD','EF','GH'];
+	var shuffledSNRArray = jsPsych.randomization.shuffle(SNR_Array);
+var SNR = 'single'
 	
+		
     function centered_message(message) {
- return '<div class="container" style="height:800px;width:800px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;font-weight:normal;font-family:Arial;font-size:20px">' + message + '<div>'
+ return '<div class="container" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;font-weight:normal;font-family:Arial;font-size:40px">' + message + '<div>'
     }
+
 	
     XYData = $ .get(`GeneratedStim/${mean_picker}.csv`, function(){
  XYActual = Papa.parse(XYData.responseText, {
      dynamicTyping: true
  })
     })	
+	
+    ABData = $ .get(`GeneratedStim/0397.csv`, function(){
+ ABActual = Papa.parse(ABData.responseText, {
+     dynamicTyping: true
+ })
+    }) 
+	   CDData = $ .get(`GeneratedStim/1218.csv`, function(){
+ CDActual = Papa.parse(CDData.responseText, {
+     dynamicTyping: true
+ })
+    })
+    EFData = $ .get(`GeneratedStim/3277.csv`, function(){
+ EFActual = Papa.parse(EFData.responseText, {
+     dynamicTyping: true
+ })
+    })
+    GHData = $ .get(`GeneratedStim/5201.csv`, function(){
+ GHActual = Papa.parse(GHData.responseText, {
+     dynamicTyping: true
+ })
+    })
 	
     function myFunctionWiden(){
     	UpperChoiceThreshold += -20
@@ -64,18 +92,9 @@ var script_picker = Math.floor(Math.random() * 50) + 1
     	UpperChoiceThreshold += 20
 		LowerChoiceThreshold += -20
     }
-	function myFunctionBegin(){
-		begin_pre = true
-	}
+
 	
-    var instruction_trial = {
- type: 'image-keyboard-response',
- prompt: 'Insert Instructions Slides here. Press SpaceBar to continue',
- choices: ['spacebar'],
- stimulus_height: 800,
- stimulus_width: 1000,
-    };
-    var instruction_trial2 = {
+    var instruction_trial_SingleSNRpre = {
  type: 'image-keyboard-response',
  prompt: 'Insert Instructions Slides here. Press SpaceBar to continue',
  choices: ['spacebar'],
@@ -84,6 +103,19 @@ var script_picker = Math.floor(Math.random() * 50) + 1
 		on_start: function(trial){
 			pre_trials = 'start'
 			AbsoluteFrames = 200
+			PointTotal = 0
+		}
+    };
+    var instruction_trial_SingleSNRonline = {
+ type: 'image-keyboard-response',
+ prompt: 'Insert Instructions Slides here. Press SpaceBar to continue',
+ choices: ['spacebar'],
+ stimulus_height: 800,
+ stimulus_width: 1000,
+		on_start: function(trial){
+			pre_trials = 'stop'
+			AbsoluteFrames = 200
+			PointTotal = 0
 		}
     };
 	
@@ -93,26 +125,43 @@ var script_picker = Math.floor(Math.random() * 50) + 1
 		trial_duration: [],
  stimulus: [],
  stimulus_height: 800,
- stimulus_width: 1600,
+ stimulus_width: 0,
  choices: ['uparrow', 'downarrow'],
  prompt: '',
  on_start: function(trial){
+     trial.stimulus_width = window.innerWidth
 	 switch(true) {
 	 case (AbsoluteFrames > 0):
 		 var lasttimelinedata = jsPsych.currentTrial();
 		  hmm = AbsoluteFrames - rw
 		  trial.stimulus = rw
-	        trial.trial_duration = trial_time
-	
-			TransformedDataS1 = XYActual.data[script_picker].map(x=> x * scale_factor)
-		 
+	      trial.trial_duration = trial_time
+		 switch(SNR){
+		 case 'single': 
+			TransformedDataS1 = XYActual.data[script_picker]
+			 break;
+		 case 'mixed':	        
+			 chosenSNRArray = shuffledSNRArray[SNRPicker]
+		 	switch(chosenSNRArray){
+			 case 'XY': TransformedDataS1 = XYActual.data[script_picker]
+			 break;
+		 	 case 'AB': TransformedDataS1 = ABActual.data[script_picker]
+			 break;
+		 	 case 'CD': TransformedDataS1 = CDActual.data[script_picker]
+			 break;
+		 	 case 'EF': TransformedDataS1 = EFActual.data[script_picker]
+			 break;
+		 	 case 'GH': TransformedDataS1 = GHActual.data[script_picker]
+			 break;
+		 }
+	 };
 	 		switch(direction) {
 	 		   case 38: TransformedDataS2 = TransformedDataS1.map(x=> 400 - x)
 		 	   break;
 	 		  case 40: TransformedDataS2 = TransformedDataS1.map(x=> 400 + x)
 		 	  break;
 	                          }	 
-     trial.data = TransformedDataS2							  
+							  trial.data = TransformedDataS2	
 							  break;
 							  
 						  case (AbsoluteFrames <= 0):
@@ -120,10 +169,8 @@ var script_picker = Math.floor(Math.random() * 50) + 1
  }
 		},
  on_finish: function(trial){
-	 //console.log(test_block.repetitions)
 	 var lasttimelinedata = jsPsych.currentTrial();
-	 //console.log(AbsoluteFrames - lasttimelinedata.stimulus)	 
-  
+  ChoiceDirection = 'No Choice'
 	 switch(true) {
      case (AbsoluteFrames >0):		 
   if(trial.key_press === 38) {
@@ -158,11 +205,6 @@ var script_picker = Math.floor(Math.random() * 50) + 1
 
   }
   AbsoluteFrames += -1
-  if(rw < 10) {
-	  PointBonus = 2}
-	  else {
-	  	PointBonus = 1
-	  }
   rw += 1
 	  break;
   case (AbsoluteFrames <= 0):
@@ -177,10 +219,11 @@ var script_picker = Math.floor(Math.random() * 50) + 1
 		trial_duration: [],
  stimulus: [],
  stimulus_height: 800,
- stimulus_width: 1600,
+ stimulus_width: 0,
  choices: [],
  prompt: '',
  on_start: function(trial){
+     trial.stimulus_width = window.innerWidth
 	 switch(true) {
 	 case (AbsoluteFrames > 0):
 		 var lasttimelinedata = jsPsych.currentTrial();
@@ -188,15 +231,32 @@ var script_picker = Math.floor(Math.random() * 50) + 1
 		  trial.stimulus = rw
 	        trial.trial_duration = trial_time
 	
-			TransformedDataS1 = XYActual.data[script_picker].map(x=> x * scale_factor)
-		 
+		 switch(SNR){
+		 case 'single': 
+			TransformedDataS1 = XYActual.data[script_picker]
+			 break;
+		 case 'mixed':	        
+			 chosenSNRArray = shuffledSNRArray[SNRPicker]
+		 	switch(chosenSNRArray){
+			 case 'XY': TransformedDataS1 = XYActual.data[script_picker]
+			 break;
+		 	 case 'AB': TransformedDataS1 = ABActual.data[script_picker]
+			 break;
+		 	 case 'CD': TransformedDataS1 = CDActual.data[script_picker]
+			 break;
+		 	 case 'EF': TransformedDataS1 = EFActual.data[script_picker]
+			 break;
+		 	 case 'GH': TransformedDataS1 = GHActual.data[script_picker]
+			 break;
+		 }
+	 };
 	 		switch(direction) {
 	 		   case 38: TransformedDataS2 = TransformedDataS1.map(x=> 400 - x)
 		 	   break;
 	 		  case 40: TransformedDataS2 = TransformedDataS1.map(x=> 400 + x)
 		 	  break;
 	                          }	 
-     trial.data = TransformedDataS2							  
+							  trial.data = TransformedDataS2	
 							  break;
 							  
 						  case (AbsoluteFrames <= 0):
@@ -205,10 +265,9 @@ var script_picker = Math.floor(Math.random() * 50) + 1
 		},
  on_finish: function(trial){
 	 var lasttimelinedata = jsPsych.currentTrial();
-  
 	 switch(true) {
      case (AbsoluteFrames >0):		 
-  
+  ChoiceDirection = 'No Choice'
 
 	  if (TransformedDataS2[rw] < UpperChoiceThreshold) {
 	  	ChoiceDirection = 'Above'
@@ -240,11 +299,6 @@ var script_picker = Math.floor(Math.random() * 50) + 1
   
   
   AbsoluteFrames += -1
-  if(rw < 10) {
-	  PointBonus = 2}
-	  else {
-	  	PointBonus = 1
-	  }
   rw += 1
 	  break;
   case (AbsoluteFrames <= 0):
@@ -254,20 +308,31 @@ var script_picker = Math.floor(Math.random() * 50) + 1
 }
  var test_frame_int = {
  type: 'canvas-keyboard-response',
-		trial_duration: [],
  stimulus: [],
  stimulus_height: 800,
- stimulus_width: 1600,
- choices: ['uparrow', 'downarrow'],
+ stimulus_width: 0,
+ choices: ['spacebar'],
  prompt: '',
-	 trial_duration: 2000,
+	 response_ends_trial: true,
 		on_start: function(trial){
+	 switch(CDcolor) {
+		 case 'green': SpaceBarMessage = 'Correct Response! Press Spacebar to continue'
+		 break;
+	     case 'red': SpaceBarMessage = 'Incorrect Response! Press Spacebar to continue'
+		 break;
+	 case 'No Choice': SpaceBarMessage = 'No Choice Made! Press Spacebar to continue'
+	 }
+			
+     trial.stimulus_width = window.innerWidth
 			trial.data = 0
 			if(AbsoluteFrames <=0){
 				trial.trial_duration = 0
+	  		  jsPsych.endCurrentTimeline();
 			}
 		},
 		on_finish: function(trial){
+     SpaceBarMessage = ''
+			
 			rw = 0
 			script_picker = Math.floor(Math.random() * 50) + 1
 			BallVisible = true
@@ -275,43 +340,89 @@ var script_picker = Math.floor(Math.random() * 50) + 1
 			var myArray = [38,40];
 			var shuffledArray = jsPsych.randomization.shuffle(myArray);
 			direction = shuffledArray[0]
-			console.log(direction)
 			timeleft = 10
-			begin_pre = false
+			CDcolor = 'No Choice'
+            SNR_Picker = Math.floor(Math.random() * 4)
+			
 		}
 	}
 	
     var test_frame_int_pre = {
     type: 'canvas-keyboard-response',
-   		trial_duration: [],
     stimulus: [],
     stimulus_height: 800,
-    stimulus_width: 1600,
-    choices: [],
+    stimulus_width: 0,
+    choices: ['uparrow','downarrow','spacebar'],
     prompt: '',
-		trial_duration: [],
+
    		on_start: function(trial){
-   			trial.data = 0
-			trial.trial_duration = 750
-   			if(AbsoluteFrames <=0){
-   				trial.trial_duration = 0
-   			}
-   		},
-   		on_finish: function(trial){
-			timeleft += -1
-			if(begin_pre = true){
-				trial.trial_duration = 0
-			}
-   		}
+	   	 switch(CDcolor) {
+	   		 case 'green': SpaceBarMessage = 'Use the UP arrow to move lines away from center. Use the DOWN button to move lines towards the center. Correct Response! Press Spacebar to continue'
+	   		 break;
+	   	     case 'red': SpaceBarMessage = 'Use the UP arrow to move lines away from center. Use the DOWN button to move lines towards the center. Incorrect Response! Press Spacebar to continue'
+	   		 break;
+	   	 case 'No Choice': SpaceBarMessage = 'Use the UP arrow to move lines away from center. Use the DOWN button to move lines towards the center. No Choice Made! Press Spacebar to continue'
+	   	 }
+			
+	        trial.stimulus_width = window.innerWidth
+	   			trial.data = 0
+	   			if(AbsoluteFrames <=0){
+	   				trial.trial_duration = 0
+		  		  jsPsych.endCurrentTimeline();
+					
+	   			}
+	   		},
+	   		on_finish: function(trial){
+	        SpaceBarMessage = ''
+			
+	   			rw = 0
+	   			script_picker = Math.floor(Math.random() * 50) + 1
+	   			BallVisible = true
+	   			trial_time = 500
+	   			var myArray = [38,40];
+	   			var shuffledArray = jsPsych.randomization.shuffle(myArray);
+	   			direction = shuffledArray[0]
+	   			timeleft = 10
+	   			CDcolor = 'No Choice'
+	            SNR_Picker = Math.floor(Math.random() * 4)
+	   		}
    	}	
 	
 	var end_script = {
  type: 'html-keyboard-response',
  stimulus: '',
- prompt: 'Ending Screen',
+ prompt: 'Beginning Mixed SNR part',
  choices: ['downarrow'],
  stimulus_height: 800,
- stimulus_width: 1000,
+ stimulus_width: 800,
+		on_finish: function(trial){
+			SNR = 'mixed'
+			AbsoluteFrames = 1000
+		}
+	}
+	
+	var training_trial_start	= {
+ type: 'html-keyboard-response',
+ stimulus: '',
+ prompt: 'The next part will just be training. Insert more specific training instructions. Hit spacebar',
+ choices: ['spacebar'],
+ stimulus_height: 800,
+ stimulus_width: 800,
+		on_finish: function(trial){
+			AbsoluteFrames = 50
+		}
+	}
+	var training_trial_end	= {
+ type: 'html-keyboard-response',
+ stimulus: '',
+ prompt: 'The training is over. Insert more specific training instructions. Hit spacebar',
+ choices: ['spacebar'],
+ stimulus_height: 800,
+ stimulus_width: 800,
+		on_finish: function(trial){
+			AbsoluteFrames = 400
+			PointTotal = 0
+		}
 	}
 		
 	var test_block = {
@@ -325,22 +436,32 @@ var script_picker = Math.floor(Math.random() * 50) + 1
 	
 	var test_frame_int_block = {
 		timeline: [test_frame_int_pre],
-		repetitions: 10
+		repetitions: 1
 	}	
 	
 	var full_block = {
 		timeline: [test_block, test_frame_int],
-		repetitions: 20
+		repetitions: 30
+	}
+	var full_block_pre = {
+		timeline: [test_block_pre, test_frame_int_pre],
+		repetitions: 30
+	}
+	var training_block = {
+		timeline: [training_trial_start, full_block, training_trial_end],
+		repetitions: 1
 	}
 	
-	var full_block_pre = {
-		timeline: [test_block_pre, test_frame_int_block, test_frame_int],
-		repetitions: 20
+	var training_block_pre = {
+		timeline: [training_trial_start, full_block_pre, training_trial_end],
+		repetitions: 1
 	}
+	
+
 	
     jsPsych.init({
- timeline: [instruction_trial, full_block, instruction_trial2, full_block_pre, end_script],
- preload: [XYData],
+ timeline: [instruction_trial_SingleSNRpre, training_block_pre, full_block_pre, instruction_trial_SingleSNRonline, training_block, full_block, end_script, training_block_pre, full_block_pre],
+ preload: [XYData,ABData,CDData,EFData,GHData],
 		default_iti: 0
 	})
 	</script>
