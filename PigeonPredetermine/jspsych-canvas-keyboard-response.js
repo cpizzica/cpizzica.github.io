@@ -71,9 +71,13 @@ console.log(ScreenWidth)
   plugin.trial = function(display_element, trial) {
     // display stimulus
 	  var html = centered_message(`${SpaceBarMessage}`)
+	  if(buttonappear){
+	  	html += '<button class="button button1" id="animate">Narrow</button>'
+        html += '<button class="button button2" id="animate2">Widen</button>'
+	  }
 	  html += '<canvas id="jspsych-canvas-keyboard-response-stimulus">' + trial.stimulus + '</canvas>';
       html += centered_message(`Steps Remaining: ${AbsoluteFrames}`)
-	  html += centered_message(`Last Response: ${ChoiceDirection}`)
+	  html += centered_message(`Response: ${ChoiceDirection}`)
 	  html += centered_message(`Seeds: ${PointTotal}`)
 	  
 	  switch(pre_trials){
@@ -104,7 +108,6 @@ console.log(ScreenWidth)
 
 var ctx = document.getElementById('jspsych-canvas-keyboard-response-stimulus')
 var canvas = new fabric.StaticCanvas('jspsych-canvas-keyboard-response-stimulus', { objectCaching: false, width: trial.stimulus_width, height: 800});
-var canvas2 = new fabric.Canvas('second-canvas');  
  
       
 mid_line = new fabric.Line([0,400,trial.stimulus_width,400],{
@@ -116,7 +119,7 @@ mid_line = new fabric.Line([0,400,trial.stimulus_width,400],{
   });
 
   
-  UpperChoiceBox = new fabric.Rect({objectCaching: false, width: trial.stimulus_width, height: 5, fill: 'red', top: UpperChoiceThreshold, left: 0 });
+  UpperChoiceBox = new fabric.Rect({objectCaching: false, width: trial.stimulus_width, height: 5, fill: 'blue', top: UpperChoiceThreshold, left: 0 });
   LowerChoiceBox = new fabric.Rect({objectCaching: false, width: trial.stimulus_width, height: 5, fill: 'red', top: LowerChoiceThreshold, left: 0 });
   
   
@@ -143,7 +146,7 @@ Circle16 = new fabric.Circle({objectCaching: false, radius: ball_size, fill: '#f
 Circle17 = new fabric.Circle({objectCaching: false, radius: ball_size, fill: '#f55', opacity: 0.9,top: trial.data[rw - 3], left: width_con * 17 })
 Circle18 = new fabric.Circle({objectCaching: false, radius: ball_size, fill: '#f55', opacity: 0.9, top: trial.data[rw - 2], left: width_con * 18 })
 Circle19 = new fabric.Circle({objectCaching: false, radius: ball_size, fill: '#f55', opacity: 1.0, top: trial.data[rw - 1], left: width_con * 19 })
-Circle20 = new fabric.Circle({objectCaching: false, radius: ball_size, fill: '#f55', opacity: 1.0, strokeWidth: 2, stroke: "green", top: trial.data[ rw ], left: width_con * 20 })
+Circle20 = new fabric.Circle({objectCaching: false, radius: ball_size, fill: '#f55', opacity: 1.0, strokeWidth: 2, stroke: "green", top: trial.data[ rw ], left: width_con * 19.8 })
 
 canvas.add(Circle1)	  
 canvas.add(Circle2)
@@ -181,27 +184,100 @@ canvas.add(Circle20)
 if (BallVisible == false){
 canvas.clear
 
-  }      
-/*	
-var after_response = function(info){
-	switch(info.key){
-		case 38: UpperChoiceThreshold += -20
-		LowerChoiceThreshold += 20
-		break;
-		
-		case 40: UpperChoiceThreshold += 20
-		LowerChoiceThreshold += -20
-		break;
-	}
-}
+  } 
+ /*    
+  var after_response = function(info){
+  	switch(info.key){
+  		case 38: UpperChoiceBox.animate('top', UpperChoiceBox.top += -1, {
+          duration: 0,
+          onChange: canvas.renderAll.bind(canvas),
+          onComplete: function() {
 
-jsPsych.pluginAPI.getKeyboardResponse({
-  callback_function:after_response,
-  valid_responses: ['uparrow','downarrow'],
-  rt_method: 'performance',
-  persist: false
-});	
-*/	  
+          },
+        });
+        LowerChoiceBox.animate('top', LowerChoiceBox.top += 1, {
+          duration: 0,
+          onChange: canvas.renderAll.bind(canvas),
+          onComplete: function() {
+
+			console.log(UpperChoiceThreshold + "thresthold")
+			  console.log(UpperChoiceBox.top + "choicebox")
+          },
+        });
+  		break;
+		
+  		case 40: UpperChoiceBox.animate('top', UpperChoiceBox.top += 1, {
+          duration: 0,
+          onChange: canvas.renderAll.bind(canvas),
+          onComplete: function() {
+
+          },
+        });
+        LowerChoiceBox.animate('top', LowerChoiceBox.top += -1, {
+          duration: 0,
+          onChange: canvas.renderAll.bind(canvas),
+          onComplete: function() {
+
+          },
+        });
+  		break;
+  	}
+  }  
+    
+  var listener_id = jsPsych.pluginAPI.getKeyboardResponse({
+    callback_function: after_response,
+    valid_responses: ['uparrow','downarrow'],
+    rt_method: 'performance',
+	  persist: true,
+	  allow_held_key: false
+  });	
+	
+*/
+	
+ 
+    var animateBtn = document.getElementById('animate');
+      animateBtn.onclick = function() {
+      animateBtn.disabled = true;
+      UpperChoiceBox.animate('top', UpperChoiceBox.top += 20, {
+        duration: 0,
+        onChange: canvas.renderAll.bind(canvas),
+        onComplete: function() {
+          animateBtn.disabled = false;
+		  UpperChoiceThreshold += 20
+        },
+      });
+      LowerChoiceBox.animate('top', LowerChoiceBox.top += -20, {
+        duration: 0,
+        onChange: canvas.renderAll.bind(canvas),
+        onComplete: function() {
+          animateBtn.disabled = false;
+		  LowerChoiceThreshold += -20
+        },
+      });
+    };
+	
+    var animateBtn = document.getElementById('animate2');
+      animateBtn.onclick = function() {
+      animateBtn.disabled = true;
+      UpperChoiceBox.animate('top', UpperChoiceBox.top += -20, {
+        duration: 0,
+        onChange: canvas.renderAll.bind(canvas),
+        onComplete: function() {
+          animateBtn.disabled = false;
+		  UpperChoiceThreshold += -20
+        },
+      });
+      LowerChoiceBox.animate('top', LowerChoiceBox.top += 20, {
+        duration: 0,
+        onChange: canvas.renderAll.bind(canvas),
+        onComplete: function() {
+          animateBtn.disabled = false;
+		  LowerChoiceThreshold += 20
+        },
+      });
+    };
+  
+    
     // function to end trial when it is time
     var end_trial = function() {
 

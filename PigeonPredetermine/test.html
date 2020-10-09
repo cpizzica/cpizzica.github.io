@@ -11,7 +11,9 @@
 <script type="text/javascript" src="jspsych-survey-multi-choice.js"></script>
 <script type="text/javascript" src="jspsych-external-html.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-	<script src="fabric.js"> </script>
+<link rel="stylesheet" href="myproject.css">
+<link rel="stylesheet" href="jspsych.css">
+<script src="fabric.js"> </script>
 
 
 
@@ -20,7 +22,7 @@
 <body>
 </body>
 <style>	
-	</style>
+</style>
 <script>
 var timeline = []
 rw = 0	
@@ -30,8 +32,8 @@ var BallVisible = true
 var Leadin = 1
 var PointBonus = 1
 var PointTotal = 0
-var UpperChoiceThreshold = 150
-var LowerChoiceThreshold = 650
+var UpperChoiceThreshold = 200
+var LowerChoiceThreshold = 600
 var trial_time = 500
 var direction = 38
 var AbsoluteFrames = 200
@@ -45,11 +47,13 @@ var mean_picker = '2133'
 var scale_factor = 15
 var script_picker = Math.floor(Math.random() * 50) + 1
 var ScreenWidth = window.innerWidth
-var SpaceBarMessage = ''
+var SpaceBarMessage = 'Press Spacebar to abort trial and adjust threshold'
 var SNR_Picker = 1
 	var SNR_Array = ['XY','AB','CD','EF','GH'];
 	var shuffledSNRArray = jsPsych.randomization.shuffle(SNR_Array);
 var SNR = 'single'
+var buttonappear = false
+var instruction_picker = 1
 	
 		
     function centered_message(message) {
@@ -96,27 +100,88 @@ var SNR = 'single'
 	
     var instruction_trial_SingleSNRpre = {
  type: 'image-keyboard-response',
- prompt: 'Insert Instructions Slides here. Press SpaceBar to continue',
+ stimulus: '',
  choices: ['spacebar'],
  stimulus_height: 800,
  stimulus_width: 1000,
 		on_start: function(trial){
+			 trial.stimulus = 'tutorial' + instruction_picker + '.png'
 			pre_trials = 'start'
 			AbsoluteFrames = 200
 			PointTotal = 0
-		}
+		},
+   	     on_finish: function(trial){
+   	     instruction_picker = instruction_picker + 1
+   	 }
     };
+	
     var instruction_trial_SingleSNRonline = {
  type: 'image-keyboard-response',
- prompt: 'Insert Instructions Slides here. Press SpaceBar to continue',
+		stimulus: '',
  choices: ['spacebar'],
  stimulus_height: 800,
  stimulus_width: 1000,
 		on_start: function(trial){
+			trial.stimulus = 'tutorial' + instruction_picker + '.png'
 			pre_trials = 'stop'
 			AbsoluteFrames = 200
 			PointTotal = 0
-		}
+		},
+  	     on_finish: function(trial){
+  	     instruction_picker = instruction_picker + 1
+  	 }
+    };
+	
+    var instruction_trial_mixedSNRonline = {
+ type: 'image-keyboard-response',
+		stimulus: '',
+ choices: ['spacebar'],
+ stimulus_height: 800,
+ stimulus_width: 1000,
+		on_start: function(trial){
+			trial.stimulus = 'tutorial' + instruction_picker + '.png'
+			pre_trials = 'stop'
+			AbsoluteFrames = 200
+			PointTotal = 0
+			pre_trials = 'stop'
+		},
+  	     on_finish: function(trial){
+  	     instruction_picker = instruction_picker + 1
+  	 }
+    };
+	
+    var instruction_trial_mixedSNRonline_accuracy = {
+ type: 'image-keyboard-response',
+		stimulus: '',
+ choices: ['spacebar'],
+ stimulus_height: 800,
+ stimulus_width: 1000,
+		on_start: function(trial){
+			trial.stimulus = 'tutorial' + instruction_picker + '.png'
+			pre_trials = 'stop'
+			AbsoluteFrames = 500
+			PointTotal = 0
+		},
+  	     on_finish: function(trial){
+  	     instruction_picker = instruction_picker + 1
+  	 }
+    };
+	
+    var instruction_trial_mixedSNRonline_speed = {
+ type: 'image-keyboard-response',
+		stimulus: '',
+ choices: ['spacebar'],
+ stimulus_height: 800,
+ stimulus_width: 1000,
+		on_start: function(trial){
+			trial.stimulus = 'tutorial' + instruction_picker + '.png'
+			pre_trials = 'stop'
+			AbsoluteFrames = 500
+			PointTotal = 0
+		},
+  	     on_finish: function(trial){
+  	     instruction_picker = instruction_picker + 1
+  	 }
     };
 	
 	
@@ -141,7 +206,7 @@ var SNR = 'single'
 			TransformedDataS1 = XYActual.data[script_picker]
 			 break;
 		 case 'mixed':	        
-			 chosenSNRArray = shuffledSNRArray[SNRPicker]
+			 chosenSNRArray = shuffledSNRArray[SNR_Picker]
 		 	switch(chosenSNRArray){
 			 case 'XY': TransformedDataS1 = XYActual.data[script_picker]
 			 break;
@@ -220,7 +285,7 @@ var SNR = 'single'
  stimulus: [],
  stimulus_height: 800,
  stimulus_width: 0,
- choices: [],
+ choices: ['spacebar'],
  prompt: '',
  on_start: function(trial){
      trial.stimulus_width = window.innerWidth
@@ -236,7 +301,7 @@ var SNR = 'single'
 			TransformedDataS1 = XYActual.data[script_picker]
 			 break;
 		 case 'mixed':	        
-			 chosenSNRArray = shuffledSNRArray[SNRPicker]
+			 chosenSNRArray = shuffledSNRArray[SNR_Picker]
 		 	switch(chosenSNRArray){
 			 case 'XY': TransformedDataS1 = XYActual.data[script_picker]
 			 break;
@@ -266,9 +331,17 @@ var SNR = 'single'
  on_finish: function(trial){
 	 var lasttimelinedata = jsPsych.currentTrial();
 	 switch(true) {
-     case (AbsoluteFrames >0):		 
+     case (AbsoluteFrames >0):	
+		 	 
   ChoiceDirection = 'No Choice'
-
+	     if(trial.key_press === 32) {
+	     	ChoiceDirection = ''
+	   	  BallVisible = false
+	   	  trial_time = 0
+	   	  CDcolor = 'No Choice'
+	   	  jsPsych.endCurrentTimeline();
+	  }
+		   
 	  if (TransformedDataS2[rw] < UpperChoiceThreshold) {
 	  	ChoiceDirection = 'Above'
 		  BallVisible = false
@@ -316,11 +389,11 @@ var SNR = 'single'
 	 response_ends_trial: true,
 		on_start: function(trial){
 	 switch(CDcolor) {
-		 case 'green': SpaceBarMessage = 'Correct Response! Press Spacebar to continue'
+		 case 'green': SpaceBarMessage = 'Press Spacebar to continue. <p class = "correct">Correct Response!</p>'
 		 break;
-	     case 'red': SpaceBarMessage = 'Incorrect Response! Press Spacebar to continue'
+	     case 'red': SpaceBarMessage = 'Press Spacebar to continue.  <p class = "incorrect">Incorrect Response!</p>'
 		 break;
-	 case 'No Choice': SpaceBarMessage = 'No Choice Made! Press Spacebar to continue'
+	 case 'No Choice': SpaceBarMessage = 'Press Spacebar to continue. <br> No Choice Made!'
 	 }
 			
      trial.stimulus_width = window.innerWidth
@@ -341,7 +414,6 @@ var SNR = 'single'
 			var shuffledArray = jsPsych.randomization.shuffle(myArray);
 			direction = shuffledArray[0]
 			timeleft = 10
-			CDcolor = 'No Choice'
             SNR_Picker = Math.floor(Math.random() * 4)
 			
 		}
@@ -352,16 +424,17 @@ var SNR = 'single'
     stimulus: [],
     stimulus_height: 800,
     stimulus_width: 0,
-    choices: ['uparrow','downarrow','spacebar'],
+    choices: ['spacebar'],
     prompt: '',
 
    		on_start: function(trial){
+		 buttonappear = true
 	   	 switch(CDcolor) {
-	   		 case 'green': SpaceBarMessage = 'Use the UP arrow to move lines away from center. Use the DOWN button to move lines towards the center. Correct Response! Press Spacebar to continue'
+	   		 case 'green': SpaceBarMessage = 'Use buttons to adjust threshold. <br> Press Spacebar to continue. <p class = "correct">Correct Response!</p>'
 	   		 break;
-	   	     case 'red': SpaceBarMessage = 'Use the UP arrow to move lines away from center. Use the DOWN button to move lines towards the center. Incorrect Response! Press Spacebar to continue'
+	   	     case 'red': SpaceBarMessage = ' Use buttons to adjust threshold. <br> Press Spacebar to continue.  <p class = "incorrect">Incorrect Response!</p>'
 	   		 break;
-	   	 case 'No Choice': SpaceBarMessage = 'Use the UP arrow to move lines away from center. Use the DOWN button to move lines towards the center. No Choice Made! Press Spacebar to continue'
+	   	 case 'No Choice': SpaceBarMessage = 'Use buttons to adjust threshold. <br> Press Spacebar to continue. <br>  No Choice Made!'
 	   	 }
 			
 	        trial.stimulus_width = window.innerWidth
@@ -373,7 +446,8 @@ var SNR = 'single'
 	   			}
 	   		},
 	   		on_finish: function(trial){
-	        SpaceBarMessage = ''
+			buttonappear = false
+	        SpaceBarMessage = 'Press SpaceBar to abort trial and alter threshold.'
 			
 	   			rw = 0
 	   			script_picker = Math.floor(Math.random() * 50) + 1
@@ -389,39 +463,56 @@ var SNR = 'single'
    	}	
 	
 	var end_script = {
- type: 'html-keyboard-response',
+ type: 'image-keyboard-response',
  stimulus: '',
- prompt: 'Beginning Mixed SNR part',
- choices: ['downarrow'],
- stimulus_height: 800,
- stimulus_width: 800,
-		on_finish: function(trial){
-			SNR = 'mixed'
-			AbsoluteFrames = 1000
-		}
-	}
-	
-	var training_trial_start	= {
- type: 'html-keyboard-response',
- stimulus: '',
- prompt: 'The next part will just be training. Insert more specific training instructions. Hit spacebar',
  choices: ['spacebar'],
  stimulus_height: 800,
  stimulus_width: 800,
+		on_start: function(trial){
+			trial.stimulus = 'tutorial' + instruction_picker + '.png'
+			SNR = 'mixed'
+			AbsoluteFrames = 500
+			pre_trials = 'start'
+		},
+  	     on_finish: function(trial){
+  	     instruction_picker = instruction_picker + 1
+			 pre_trials = 'start'
+			 PointTotal = 0
+  	 }	
+	}
+	
+	var training_trial_start	= {
+ type: 'image-keyboard-response',
+ stimulus: '',
+ choices: ['spacebar'],
+ stimulus_height: 800,
+ stimulus_width: 800,
+		on_start: function(trial){
+			trial.stimulus = 'StartTraining.png'
+		},
 		on_finish: function(trial){
 			AbsoluteFrames = 50
 		}
 	}
 	var training_trial_end	= {
- type: 'html-keyboard-response',
+ type: 'image-keyboard-response',
  stimulus: '',
- prompt: 'The training is over. Insert more specific training instructions. Hit spacebar',
  choices: ['spacebar'],
  stimulus_height: 800,
  stimulus_width: 800,
+		on_start: function(trial){
+						trial.stimulus = 'EndTraining.png'
+		},
 		on_finish: function(trial){
-			AbsoluteFrames = 400
+			switch (SNR){
+				case 'single': AbsoluteFrames = 100
+				PointTotal = 0
+				break;
+			console.log(SNR)
+			case 'mixed': AbsoluteFrames = 500
 			PointTotal = 0
+				break
+			}
 		}
 	}
 		
@@ -457,14 +548,37 @@ var SNR = 'single'
 		repetitions: 1
 	}
 	
+	var instruction_trial_SingleSNRpre_block = {
+		timeline: [instruction_trial_SingleSNRpre],
+		repetitions: 10
+	}
+	
+	var instruction_trial_SingleSNRonline_block = {
+		timeline: [instruction_trial_SingleSNRonline],
+		repetitions: 2
+	}
+	
+	var end_script_block = {
+		timeline: [end_script],
+		repetitions: 3
+	}
+	
+	var instruction_trial_mixedSNRonline_block = {
+		timeline: [instruction_trial_mixedSNRonline],
+		repetitions: 1
+	}
+	
+	
 
 	
     jsPsych.init({
- timeline: [instruction_trial_SingleSNRpre, training_block_pre, full_block_pre, instruction_trial_SingleSNRonline, training_block, full_block, end_script, training_block_pre, full_block_pre],
+ timeline: [instruction_trial_SingleSNRpre_block, training_block_pre, test_frame_int_pre, full_block_pre, instruction_trial_SingleSNRonline_block, training_block, full_block, end_script_block, training_block_pre, test_frame_int_pre, full_block_pre, instruction_trial_mixedSNRonline_block, training_block, full_block, instruction_trial_mixedSNRonline_accuracy, training_block, full_block, instruction_trial_mixedSNRonline_speed, training_block, full_block],
  preload: [XYData,ABData,CDData,EFData,GHData],
 		default_iti: 0
 	})
 	</script>
 <html>
+<button id="animate" hidden>Narrow</button>
+<button id="animate2" hidden>Widen</button>
 </html>
 
