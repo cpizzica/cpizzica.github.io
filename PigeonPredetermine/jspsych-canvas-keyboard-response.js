@@ -71,14 +71,20 @@ console.log(ScreenWidth)
   plugin.trial = function(display_element, trial) {
     // display stimulus
 	  var html = centered_message(`${SpaceBarMessage}`)
-	  if(buttonappear){
+	  switch(buttonappear){
+        case true: 
 	  	html += '<button class="button button1" id="animate">Narrow</button>'
         html += '<button class="button button2" id="animate2">Widen</button>'
+		  break;
+	    case false: 
+		html += '<button class="button button3">Narrow</button>'
+        html += '<button class="button button3">Widen</button>'
+		  break;
 	  }
+	  
 	  html += '<canvas id="jspsych-canvas-keyboard-response-stimulus">' + trial.stimulus + '</canvas>';
-      html += centered_message(`Steps Remaining: ${AbsoluteFrames}`)
-	  html += centered_message(`Response: ${ChoiceDirection}`)
-	  html += centered_message(`Seeds: ${PointTotal}`)
+      html += `Steps Remaining: ${AbsoluteFrames} | Response: ${BottomBarMessage} | Seeds: ${PointTotal}`
+
 	  
 	  switch(pre_trials){
 	  case 'start':
@@ -124,8 +130,8 @@ mid_line = new fabric.Line([0,400,trial.stimulus_width,400],{
   
   
 var ball_size = 8
-
-width_con = (trial.stimulus_width/20)
+  
+width_con = trial.stimulus_width * .75 / 20
   
 Circle1 = new fabric.Circle({objectCaching: false, radius: ball_size, fill: '#f55', opacity: 0.1,top: trial.data[rw - 19], left: width_con * 1 })
 Circle2 = new fabric.Circle({objectCaching: false, radius: ball_size, fill: '#f55', opacity: 0.1,top: trial.data[rw - 18], left: width_con * 2 })
@@ -146,7 +152,8 @@ Circle16 = new fabric.Circle({objectCaching: false, radius: ball_size, fill: '#f
 Circle17 = new fabric.Circle({objectCaching: false, radius: ball_size, fill: '#f55', opacity: 0.9,top: trial.data[rw - 3], left: width_con * 17 })
 Circle18 = new fabric.Circle({objectCaching: false, radius: ball_size, fill: '#f55', opacity: 0.9, top: trial.data[rw - 2], left: width_con * 18 })
 Circle19 = new fabric.Circle({objectCaching: false, radius: ball_size, fill: '#f55', opacity: 1.0, top: trial.data[rw - 1], left: width_con * 19 })
-Circle20 = new fabric.Circle({objectCaching: false, radius: ball_size, fill: '#f55', opacity: 1.0, strokeWidth: 2, stroke: "green", top: trial.data[ rw ], left: width_con * 19.8 })
+Circle20 = new fabric.Circle({objectCaching: false, radius: ball_size, fill: '#f55', opacity: 1.0, strokeWidth: 2, stroke: "green", top: trial.data[ rw ], left: width_con * 20 })
+  
 
 canvas.add(Circle1)	  
 canvas.add(Circle2)
@@ -233,46 +240,59 @@ canvas.clear
   });	
 	
 */
-	
- 
+	console.log(UpperChoiceThreshold)
+  
     var animateBtn = document.getElementById('animate');
+
       animateBtn.onclick = function() {
-      animateBtn.disabled = true;
       UpperChoiceBox.animate('top', UpperChoiceBox.top += 20, {
-        duration: 0,
+        duration: 0.5,
         onChange: canvas.renderAll.bind(canvas),
         onComplete: function() {
-          animateBtn.disabled = false;
-		  UpperChoiceThreshold += 20
-        },
+			if(UpperChoiceThreshold >= 360){
+				animateBtn.disabled = true
+			}
+
+  		  if(LowerChoiceThreshold <= 700){
+  			animateBtn2.disabled = false
+  		}
+				  UpperChoiceThreshold += 20
+		   },
       });
       LowerChoiceBox.animate('top', LowerChoiceBox.top += -20, {
-        duration: 0,
+        duration: 0.5,
         onChange: canvas.renderAll.bind(canvas),
         onComplete: function() {
-          animateBtn.disabled = false;
 		  LowerChoiceThreshold += -20
         },
       });
-    };
-	
-    var animateBtn = document.getElementById('animate2');
-      animateBtn.onclick = function() {
-      animateBtn.disabled = true;
+      }
+  
+
+
+    var animateBtn2 = document.getElementById('animate2');
+      animateBtn2.onclick = function() {
       UpperChoiceBox.animate('top', UpperChoiceBox.top += -20, {
-        duration: 0,
+        duration: .5,
         onChange: canvas.renderAll.bind(canvas),
         onComplete: function() {
-          animateBtn.disabled = false;
-		  UpperChoiceThreshold += -20
+
+		  if(UpperChoiceThreshold <= 360){
+			animateBtn.disabled = false
+		}
+				  UpperChoiceThreshold += -20
         },
       });
       LowerChoiceBox.animate('top', LowerChoiceBox.top += 20, {
-        duration: 0,
+        duration: 0.5,
         onChange: canvas.renderAll.bind(canvas),
         onComplete: function() {
-          animateBtn.disabled = false;
-		  LowerChoiceThreshold += 20
+
+			if(LowerChoiceThreshold >= 700){
+				animateBtn2.disabled = true
+			}
+		  			LowerChoiceThreshold += 20
+
         },
       });
     };

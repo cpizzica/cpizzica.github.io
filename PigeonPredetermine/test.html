@@ -47,13 +47,14 @@ var mean_picker = '2133'
 var scale_factor = 15
 var script_picker = Math.floor(Math.random() * 50) + 1
 var ScreenWidth = window.innerWidth
-var SpaceBarMessage = 'Press Spacebar to abort trial and adjust threshold'
+var SpaceBarMessage = 'Press Spacebar to abort trial'
 var SNR_Picker = 1
 	var SNR_Array = ['XY','AB','CD','EF','GH'];
 	var shuffledSNRArray = jsPsych.randomization.shuffle(SNR_Array);
 var SNR = 'single'
 var buttonappear = false
 var instruction_picker = 1
+var BottomBarMessage = 'No Response'
 	
 		
     function centered_message(message) {
@@ -102,8 +103,8 @@ var instruction_picker = 1
  type: 'image-keyboard-response',
  stimulus: '',
  choices: ['spacebar'],
- stimulus_height: 800,
- stimulus_width: 1000,
+ stimulus_height: 540,
+ stimulus_width: 960,
 		on_start: function(trial){
 			 trial.stimulus = 'tutorial' + instruction_picker + '.png'
 			pre_trials = 'start'
@@ -119,8 +120,8 @@ var instruction_picker = 1
  type: 'image-keyboard-response',
 		stimulus: '',
  choices: ['spacebar'],
- stimulus_height: 800,
- stimulus_width: 1000,
+ stimulus_height: 540,
+ stimulus_width: 960,
 		on_start: function(trial){
 			trial.stimulus = 'tutorial' + instruction_picker + '.png'
 			pre_trials = 'stop'
@@ -129,6 +130,7 @@ var instruction_picker = 1
 		},
   	     on_finish: function(trial){
   	     instruction_picker = instruction_picker + 1
+			 SpaceBarMessage = 'Use the up or down arrows on the keyboard to make a choice'
   	 }
     };
 	
@@ -136,9 +138,10 @@ var instruction_picker = 1
  type: 'image-keyboard-response',
 		stimulus: '',
  choices: ['spacebar'],
- stimulus_height: 800,
- stimulus_width: 1000,
+ stimulus_height: 540,
+ stimulus_width: 960,
 		on_start: function(trial){
+			SpaceBarMessage = 'Press Spacebar to abort trial.'
 			trial.stimulus = 'tutorial' + instruction_picker + '.png'
 			pre_trials = 'stop'
 			AbsoluteFrames = 200
@@ -154,8 +157,8 @@ var instruction_picker = 1
  type: 'image-keyboard-response',
 		stimulus: '',
  choices: ['spacebar'],
- stimulus_height: 800,
- stimulus_width: 1000,
+ stimulus_height: 540,
+ stimulus_width: 960,
 		on_start: function(trial){
 			trial.stimulus = 'tutorial' + instruction_picker + '.png'
 			pre_trials = 'stop'
@@ -171,8 +174,8 @@ var instruction_picker = 1
  type: 'image-keyboard-response',
 		stimulus: '',
  choices: ['spacebar'],
- stimulus_height: 800,
- stimulus_width: 1000,
+ stimulus_height: 540,
+ stimulus_width: 960,
 		on_start: function(trial){
 			trial.stimulus = 'tutorial' + instruction_picker + '.png'
 			pre_trials = 'stop'
@@ -194,6 +197,7 @@ var instruction_picker = 1
  choices: ['uparrow', 'downarrow'],
  prompt: '',
  on_start: function(trial){
+	 SpaceBarMessage = 'Use the up or down arrows on the keyboard to make a choice'
      trial.stimulus_width = window.innerWidth
 	 switch(true) {
 	 case (AbsoluteFrames > 0):
@@ -221,9 +225,9 @@ var instruction_picker = 1
 		 }
 	 };
 	 		switch(direction) {
-	 		   case 38: TransformedDataS2 = TransformedDataS1.map(x=> 400 - x)
+	 		   case 38: TransformedDataS2 = TransformedDataS1.map(x=> 395 - x)
 		 	   break;
-	 		  case 40: TransformedDataS2 = TransformedDataS1.map(x=> 400 + x)
+	 		  case 40: TransformedDataS2 = TransformedDataS1.map(x=> 395 + x)
 		 	  break;
 	                          }	 
 							  trial.data = TransformedDataS2	
@@ -316,9 +320,9 @@ var instruction_picker = 1
 		 }
 	 };
 	 		switch(direction) {
-	 		   case 38: TransformedDataS2 = TransformedDataS1.map(x=> 400 - x)
+	 		   case 38: TransformedDataS2 = TransformedDataS1.map(x=> 395 - x)
 		 	   break;
-	 		  case 40: TransformedDataS2 = TransformedDataS1.map(x=> 400 + x)
+	 		  case 40: TransformedDataS2 = TransformedDataS1.map(x=> 395 + x)
 		 	  break;
 	                          }	 
 							  trial.data = TransformedDataS2	
@@ -388,12 +392,13 @@ var instruction_picker = 1
  prompt: '',
 	 response_ends_trial: true,
 		on_start: function(trial){
+		SpaceBarMessage = 'Press Spacebar to continue'
 	 switch(CDcolor) {
-		 case 'green': SpaceBarMessage = 'Press Spacebar to continue. <p class = "correct">Correct Response!</p>'
+		 case 'green': BottomBarMessage = '<em class = "correct">Correct Response!</em>'
 		 break;
-	     case 'red': SpaceBarMessage = 'Press Spacebar to continue.  <p class = "incorrect">Incorrect Response!</p>'
+	     case 'red': BottomBarMessage = '<em class = "incorrect">Incorrect Response!</em>'
 		 break;
-	 case 'No Choice': SpaceBarMessage = 'Press Spacebar to continue. <br> No Choice Made!'
+	 case 'No Choice': BottomBarMessage = '<em>No Choice Made!</em>'
 	 }
 			
      trial.stimulus_width = window.innerWidth
@@ -404,7 +409,7 @@ var instruction_picker = 1
 			}
 		},
 		on_finish: function(trial){
-     SpaceBarMessage = ''
+     SpaceBarMessage = 'Use the up or down arrows on the keyboard to make a choice'
 			
 			rw = 0
 			script_picker = Math.floor(Math.random() * 50) + 1
@@ -428,13 +433,14 @@ var instruction_picker = 1
     prompt: '',
 
    		on_start: function(trial){
+		SpaceBarMessage = 'Use buttons to adjust threshold then press Spacebar to continue'
 		 buttonappear = true
 	   	 switch(CDcolor) {
-	   		 case 'green': SpaceBarMessage = 'Use buttons to adjust threshold. <br> Press Spacebar to continue. <p class = "correct">Correct Response!</p>'
+	   		 case 'green': BottomBarMessage = '<em class = "correct">Correct Response!</em>'
 	   		 break;
-	   	     case 'red': SpaceBarMessage = ' Use buttons to adjust threshold. <br> Press Spacebar to continue.  <p class = "incorrect">Incorrect Response!</p>'
+	   	     case 'red': BottomBarMessage = '<em class = "incorrect">Incorrect Response!</em>'
 	   		 break;
-	   	 case 'No Choice': SpaceBarMessage = 'Use buttons to adjust threshold. <br> Press Spacebar to continue. <br>  No Choice Made!'
+	   	 case 'No Choice': BottomBarMessage = '<em> No Response</em>'
 	   	 }
 			
 	        trial.stimulus_width = window.innerWidth
@@ -447,7 +453,7 @@ var instruction_picker = 1
 	   		},
 	   		on_finish: function(trial){
 			buttonappear = false
-	        SpaceBarMessage = 'Press SpaceBar to abort trial and alter threshold.'
+	        SpaceBarMessage = 'Press Spacebar to abort trial.'
 			
 	   			rw = 0
 	   			script_picker = Math.floor(Math.random() * 50) + 1
@@ -466,8 +472,8 @@ var instruction_picker = 1
  type: 'image-keyboard-response',
  stimulus: '',
  choices: ['spacebar'],
- stimulus_height: 800,
- stimulus_width: 800,
+ stimulus_height: 540,
+ stimulus_width: 960,
 		on_start: function(trial){
 			trial.stimulus = 'tutorial' + instruction_picker + '.png'
 			SNR = 'mixed'
@@ -485,8 +491,8 @@ var instruction_picker = 1
  type: 'image-keyboard-response',
  stimulus: '',
  choices: ['spacebar'],
- stimulus_height: 800,
- stimulus_width: 800,
+ stimulus_height: 540,
+ stimulus_width: 960,
 		on_start: function(trial){
 			trial.stimulus = 'StartTraining.png'
 		},
@@ -498,8 +504,8 @@ var instruction_picker = 1
  type: 'image-keyboard-response',
  stimulus: '',
  choices: ['spacebar'],
- stimulus_height: 800,
- stimulus_width: 800,
+ stimulus_height: 540,
+ stimulus_width: 960,
 		on_start: function(trial){
 						trial.stimulus = 'EndTraining.png'
 		},

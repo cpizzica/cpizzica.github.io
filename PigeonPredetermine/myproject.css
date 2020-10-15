@@ -35,6 +35,12 @@
   color: white;
 }
 
+.button3 {
+	background-color: black;
+	color: black;
+	border: 2px solid black;
+}
+
 .correct {
 	color: green;
 }
