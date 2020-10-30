@@ -125,8 +125,8 @@ mid_line = new fabric.Line([0,400,trial.stimulus_width,400],{
   });
 
   
-  UpperChoiceBox = new fabric.Rect({objectCaching: false, width: trial.stimulus_width, height: 5, fill: 'blue', top: UpperChoiceThreshold, left: 0 });
-  LowerChoiceBox = new fabric.Rect({objectCaching: false, width: trial.stimulus_width, height: 5, fill: 'red', top: LowerChoiceThreshold, left: 0 });
+  UpperChoiceBox = new fabric.Rect({objectCaching: false, width: trial.stimulus_width, height: 2, fill: 'blue', top: UpperChoiceThreshold, left: 0 });
+  LowerChoiceBox = new fabric.Rect({objectCaching: false, width: trial.stimulus_width, height: 2, fill: 'red', top: LowerChoiceThreshold, left: 0 });
   
   
 var ball_size = 8

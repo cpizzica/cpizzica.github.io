@@ -103,10 +103,10 @@ var BottomBarMessage = 'No Response'
  type: 'image-keyboard-response',
  stimulus: '',
  choices: ['spacebar'],
- stimulus_height: 540,
- stimulus_width: 960,
+ stimulus_height: 450,
+ stimulus_width: 720,
 		on_start: function(trial){
-			 trial.stimulus = 'tutorial' + instruction_picker + '.png'
+			 trial.stimulus = 'Slide' + instruction_picker + '.png'
 			pre_trials = 'start'
 			AbsoluteFrames = 200
 			PointTotal = 0
@@ -120,10 +120,10 @@ var BottomBarMessage = 'No Response'
  type: 'image-keyboard-response',
 		stimulus: '',
  choices: ['spacebar'],
- stimulus_height: 540,
- stimulus_width: 960,
+ stimulus_height: 450,
+ stimulus_width: 720,
 		on_start: function(trial){
-			trial.stimulus = 'tutorial' + instruction_picker + '.png'
+			trial.stimulus = 'Slide' + instruction_picker + '.png'
 			pre_trials = 'stop'
 			AbsoluteFrames = 200
 			PointTotal = 0
@@ -138,11 +138,11 @@ var BottomBarMessage = 'No Response'
  type: 'image-keyboard-response',
 		stimulus: '',
  choices: ['spacebar'],
- stimulus_height: 540,
- stimulus_width: 960,
+ stimulus_height: 450,
+ stimulus_width: 720,
 		on_start: function(trial){
 			SpaceBarMessage = 'Press Spacebar to abort trial.'
-			trial.stimulus = 'tutorial' + instruction_picker + '.png'
+			trial.stimulus = 'Slide' + instruction_picker + '.png'
 			pre_trials = 'stop'
 			AbsoluteFrames = 200
 			PointTotal = 0
@@ -157,10 +157,10 @@ var BottomBarMessage = 'No Response'
  type: 'image-keyboard-response',
 		stimulus: '',
  choices: ['spacebar'],
- stimulus_height: 540,
- stimulus_width: 960,
+ stimulus_height: 450,
+ stimulus_width: 720,
 		on_start: function(trial){
-			trial.stimulus = 'tutorial' + instruction_picker + '.png'
+			trial.stimulus = 'Slide' + instruction_picker + '.png'
 			pre_trials = 'stop'
 			AbsoluteFrames = 500
 			PointTotal = 0
@@ -174,10 +174,10 @@ var BottomBarMessage = 'No Response'
  type: 'image-keyboard-response',
 		stimulus: '',
  choices: ['spacebar'],
- stimulus_height: 540,
- stimulus_width: 960,
+ stimulus_height: 450,
+ stimulus_width: 720,
 		on_start: function(trial){
-			trial.stimulus = 'tutorial' + instruction_picker + '.png'
+			trial.stimulus = 'Slide' + instruction_picker + '.png'
 			pre_trials = 'stop'
 			AbsoluteFrames = 500
 			PointTotal = 0
@@ -472,10 +472,10 @@ var BottomBarMessage = 'No Response'
  type: 'image-keyboard-response',
  stimulus: '',
  choices: ['spacebar'],
- stimulus_height: 540,
- stimulus_width: 960,
+ stimulus_height: 450,
+ stimulus_width: 720,
 		on_start: function(trial){
-			trial.stimulus = 'tutorial' + instruction_picker + '.png'
+			trial.stimulus = 'Slide' + instruction_picker + '.png'
 			SNR = 'mixed'
 			AbsoluteFrames = 500
 			pre_trials = 'start'
@@ -491,8 +491,8 @@ var BottomBarMessage = 'No Response'
  type: 'image-keyboard-response',
  stimulus: '',
  choices: ['spacebar'],
- stimulus_height: 540,
- stimulus_width: 960,
+ stimulus_height: 450,
+ stimulus_width: 720,
 		on_start: function(trial){
 			trial.stimulus = 'StartTraining.png'
 		},
@@ -504,8 +504,8 @@ var BottomBarMessage = 'No Response'
  type: 'image-keyboard-response',
  stimulus: '',
  choices: ['spacebar'],
- stimulus_height: 540,
- stimulus_width: 960,
+ stimulus_height: 450,
+ stimulus_width: 720,
 		on_start: function(trial){
 						trial.stimulus = 'EndTraining.png'
 		},
@@ -556,7 +556,7 @@ var BottomBarMessage = 'No Response'
 	
 	var instruction_trial_SingleSNRpre_block = {
 		timeline: [instruction_trial_SingleSNRpre],
-		repetitions: 10
+		repetitions: 11
 	}
 	
 	var instruction_trial_SingleSNRonline_block = {
@@ -566,7 +566,7 @@ var BottomBarMessage = 'No Response'
 	
 	var end_script_block = {
 		timeline: [end_script],
-		repetitions: 3
+		repetitions: 4
 	}
 	
 	var instruction_trial_mixedSNRonline_block = {
@@ -578,7 +578,7 @@ var BottomBarMessage = 'No Response'
 
 	
     jsPsych.init({
- timeline: [instruction_trial_SingleSNRpre_block, training_block_pre, test_frame_int_pre, full_block_pre, instruction_trial_SingleSNRonline_block, training_block, full_block, end_script_block, training_block_pre, test_frame_int_pre, full_block_pre, instruction_trial_mixedSNRonline_block, training_block, full_block, instruction_trial_mixedSNRonline_accuracy, training_block, full_block, instruction_trial_mixedSNRonline_speed, training_block, full_block],
+ timeline: [instruction_trial_SingleSNRpre_block, training_block_pre, test_frame_int_pre, full_block_pre, instruction_trial_SingleSNRonline_block, training_block, full_block, end_script_block, training_block_pre, test_frame_int_pre, full_block_pre, instruction_trial_mixedSNRonline_block, training_block, full_block, instruction_trial_mixedSNRonline_accuracy, full_block, instruction_trial_mixedSNRonline_speed, full_block],
  preload: [XYData,ABData,CDData,EFData,GHData],
 		default_iti: 0
 	})
