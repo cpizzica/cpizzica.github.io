@@ -113,10 +113,10 @@ console.log(ScreenWidth)
 
 
 var ctx = document.getElementById('jspsych-canvas-keyboard-response-stimulus')
-var canvas = new fabric.StaticCanvas('jspsych-canvas-keyboard-response-stimulus', { objectCaching: false, width: trial.stimulus_width, height: 800});
+var canvas = new fabric.StaticCanvas('jspsych-canvas-keyboard-response-stimulus', { objectCaching: false, width: trial.stimulus_width, height: 600});
  
       
-mid_line = new fabric.Line([0,400,trial.stimulus_width,400],{
+mid_line = new fabric.Line([0,300,trial.stimulus_width,300],{
     strokeWidth: 2,
     fill: 'black',
     stroke: 'black',
@@ -245,25 +245,25 @@ canvas.clear
     var animateBtn = document.getElementById('animate');
 
       animateBtn.onclick = function() {
-      UpperChoiceBox.animate('top', UpperChoiceBox.top += 20, {
+      UpperChoiceBox.animate('top', UpperChoiceBox.top += 10, {
         duration: 0.5,
         onChange: canvas.renderAll.bind(canvas),
         onComplete: function() {
-			if(UpperChoiceThreshold >= 360){
+			if(UpperChoiceThreshold >= 260){
 				animateBtn.disabled = true
 			}
 
-  		  if(LowerChoiceThreshold <= 700){
+  		  if(LowerChoiceThreshold <= 580){
   			animateBtn2.disabled = false
   		}
-				  UpperChoiceThreshold += 20
+				  UpperChoiceThreshold += 10
 		   },
       });
-      LowerChoiceBox.animate('top', LowerChoiceBox.top += -20, {
+      LowerChoiceBox.animate('top', LowerChoiceBox.top += -10, {
         duration: 0.5,
         onChange: canvas.renderAll.bind(canvas),
         onComplete: function() {
-		  LowerChoiceThreshold += -20
+		  LowerChoiceThreshold += -10
         },
       });
       }
@@ -272,26 +272,26 @@ canvas.clear
 
     var animateBtn2 = document.getElementById('animate2');
       animateBtn2.onclick = function() {
-      UpperChoiceBox.animate('top', UpperChoiceBox.top += -20, {
+      UpperChoiceBox.animate('top', UpperChoiceBox.top += -10, {
         duration: .5,
         onChange: canvas.renderAll.bind(canvas),
         onComplete: function() {
 
-		  if(UpperChoiceThreshold <= 360){
+		  if(UpperChoiceThreshold <= 260){
 			animateBtn.disabled = false
 		}
-				  UpperChoiceThreshold += -20
+				  UpperChoiceThreshold += -10
         },
       });
-      LowerChoiceBox.animate('top', LowerChoiceBox.top += 20, {
+      LowerChoiceBox.animate('top', LowerChoiceBox.top += 10, {
         duration: 0.5,
         onChange: canvas.renderAll.bind(canvas),
         onComplete: function() {
 
-			if(LowerChoiceThreshold >= 700){
+			if(LowerChoiceThreshold >= 580){
 				animateBtn2.disabled = true
 			}
-		  			LowerChoiceThreshold += 20
+		  			LowerChoiceThreshold += 10
 
         },
       });

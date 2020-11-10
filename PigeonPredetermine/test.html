@@ -33,7 +33,7 @@ var Leadin = 1
 var PointBonus = 1
 var PointTotal = 0
 var UpperChoiceThreshold = 200
-var LowerChoiceThreshold = 600
+var LowerChoiceThreshold = 400
 var trial_time = 500
 var direction = 38
 var AbsoluteFrames = 200
@@ -45,7 +45,7 @@ var pre_trials = 'stop'
 //var mean_picker = prompt('0397,1218,2133,3277,5201')
 var mean_picker = '2133'
 var scale_factor = 15
-var script_picker = Math.floor(Math.random() * 50) + 1
+var script_picker = Math.floor(Math.random() * 98) + 1
 var ScreenWidth = window.innerWidth
 var SpaceBarMessage = 'Press Spacebar to abort trial'
 var SNR_Picker = 1
@@ -225,9 +225,9 @@ var BottomBarMessage = 'No Response'
 		 }
 	 };
 	 		switch(direction) {
-	 		   case 38: TransformedDataS2 = TransformedDataS1.map(x=> 395 - x)
+	 		   case 38: TransformedDataS2 = TransformedDataS1.map(x=> 295 - x)
 		 	   break;
-	 		  case 40: TransformedDataS2 = TransformedDataS1.map(x=> 395 + x)
+	 		  case 40: TransformedDataS2 = TransformedDataS1.map(x=> 295 + x)
 		 	  break;
 	                          }	 
 							  trial.data = TransformedDataS2	
@@ -320,9 +320,9 @@ var BottomBarMessage = 'No Response'
 		 }
 	 };
 	 		switch(direction) {
-	 		   case 38: TransformedDataS2 = TransformedDataS1.map(x=> 395 - x)
+	 		   case 38: TransformedDataS2 = TransformedDataS1.map(x=> 295 - x)
 		 	   break;
-	 		  case 40: TransformedDataS2 = TransformedDataS1.map(x=> 395 + x)
+	 		  case 40: TransformedDataS2 = TransformedDataS1.map(x=> 295 + x)
 		 	  break;
 	                          }	 
 							  trial.data = TransformedDataS2	
@@ -579,8 +579,16 @@ var BottomBarMessage = 'No Response'
 	
     jsPsych.init({
  timeline: [instruction_trial_SingleSNRpre_block, training_block_pre, test_frame_int_pre, full_block_pre, instruction_trial_SingleSNRonline_block, training_block, full_block, end_script_block, training_block_pre, test_frame_int_pre, full_block_pre, instruction_trial_mixedSNRonline_block, training_block, full_block, instruction_trial_mixedSNRonline_accuracy, full_block, instruction_trial_mixedSNRonline_speed, full_block],
+		on_data_update: function(data){
+			jsPsych.data.get().addToLast({Direction: direction})
+			jsPsych.data.get().addToLast({CorrectChoice: CDcolor})
+			jsPsych.data.get().addToLast({UpperChoiceThreshold: UpperChoiceThreshold})
+			jsPsych.data.get().addToLast({LowerChoiceThreshold: LowerChoiceThreshold})
+			
+		},
  preload: [XYData,ABData,CDData,EFData,GHData],
-		default_iti: 0
+		default_iti: 0,
+		    on_finish: function(){jsPsych.data.displayData(); }
 	})
 	</script>
 <html>
