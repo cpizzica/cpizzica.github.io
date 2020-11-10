@@ -97,6 +97,43 @@ var BottomBarMessage = 'No Response'
     	UpperChoiceThreshold += 20
 		LowerChoiceThreshold += -20
     }
+	var check_consent = function(elem) {
+	    if ($('#consent_checkbox').is(':checked')) {
+		return true;
+	    }
+	    else {
+		alert("If you wish to participate, you must check the box next to the statement 'I agree to participate in this study.'");
+		return false;
+	    }
+	    return false;
+	};
+
+    var consent = {
+       type:'external-html', 
+       url: "consent.html", 
+       cont_btn: "start", 
+       check_fn: check_consent
+   }
+
+   var Gender_options = ["Male", "Female", "Transgender", "Do Not Wish To Say"];
+   var Ethnicity_options = ["American Indian or Alaskan Native","Asian","Black or African American","Native Hawaiian or Pacific Islander","White","Hispanic or Latino","Other","Do Not Wish to Respond"]
+   var demographics = {
+   	type: "survey-multi-choice",
+   	questions: [{prompt:"Gender Orientation:", options: Gender_options, required:true,}, 
+   	{prompt:"Ethnicity:", options: Ethnicity_options, required:true}],
+   	   };
+   var age = {
+   type: "survey-text",
+   questions: [{prompt: "How old are you?"}],
+   post_trial_gap: 100
+   	   };
+
+   var ProlificID = {
+   type: "survey-text",
+   questions: [{prompt: "Please Enter your ProlificID"}],
+   post_trial_gap: 100
+   	   };
+
 
 	
     var instruction_trial_SingleSNRpre = {
